@@ -1,6 +1,8 @@
 footer {
   background-color: #ffffff;
   color: #2f4f2f;
+  margin: 0;
+  width: 100vw; /* biar lebar sesuai layar penuh */
 }
 
 .row-main img {
