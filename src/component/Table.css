@@ -37,6 +37,8 @@ td {
   text-align: center;
   border: 1px solid #cccccc; /* garis antar kolom dan baris */
   align-items: center;
+  word-wrap: break-word; /* Supaya teks panjang pecah ke bawah */
+  overflow: auto;      /* Biar isi tidak keluar */
 }
 
 .table .header {
