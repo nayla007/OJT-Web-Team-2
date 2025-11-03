@@ -1,11 +1,12 @@
-import React from 'react';
-import './navbar.css';
+import {Link} from "react-router-dom";
+import logo from "../assets/Logo Group.png";
 
-export default function Navbar() {
-  return (
-    <nav className="navbar fixed-top navbar-expand-lg bg-primary bg-gradient navbar-dark">
+function Navbar() {
+    return(
+        <div>
+            <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-white bg-gradient navbar-dark">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">Geo Kreasi Mandiri</a>
+        <img src={logo} alt="Logo Perusahaan" />
 
         <button
           className="navbar-toggler"
@@ -24,7 +25,7 @@ export default function Navbar() {
           {/* MENU KIRI */}
           <ul className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style={{ "--bs-scroll-height": "100px" }}>
             <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a className="nav-link text-secondary dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Home
               </a>
               <ul className="dropdown-menu">
@@ -34,7 +35,7 @@ export default function Navbar() {
             </li>
 
             <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a className="nav-link text-secondary dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Pelatihan K3
           </a>
           <ul className="dropdown-menu">
@@ -205,13 +206,13 @@ export default function Navbar() {
         </li>
 
             <li className="nav-item">
-              <a className="nav-link active" href="#">Jadwal Training</a>
+              <a className="nav-link text-secondary active" href="#">Jadwal Training</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" href="#">K3 Umum Indonesia</a>
+              <a className="nav-link text-secondary active" href="#">K3 Umum Indonesia</a>
             </li>
             <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a className="nav-link text-secondary dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Blog
               </a>
               <ul className="dropdown-menu">
@@ -246,5 +247,15 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
-  );
+            {/* <div className="navbar">
+                <img src={logo} alt="Logo Perusahaan" />
+                <Link className="nav-link" to="/beranda">Home</Link>
+                <Link className="nav-link" to="/pelatihan-k3">Pelatihan K3</Link>
+                <Link className="nav-link" to="/jadwal-training">Jadwal Training</Link>
+                <Link className="nav-link" to="/pendaftaran">Pendaftaran</Link>
+            </div> */}
+        </div>
+    )
 }
+
+export default Navbar;
