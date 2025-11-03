@@ -1,71 +1,25 @@
-body {
-  background-color: #e9fae9;
-  justify-content: center;
+h1, h3 {
+  text-align: center;
+  color: #2d2d2d;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-weight: 700;
 }
 
-.container {
- color: black;
-}
-
-.data-training {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.container {
-  width: 90%; /* semua container punya lebar seragam */
-  margin: 50px auto; /* tengah & jarak antar tabel */
-
+a .download-jadwal{
+  margin-bottom: 100px;
 }
 
 .table {
-  width: 100%; /* tabel isi penuh container */
-  border: 1px solid #ededed;
-  padding: 10px;
-  margin: 0 0 20px 20px;
-  color: #5f635d;
-  background-color: #ffffff;
-  justify-content: center;
-  align-items: center;
-  table-layout: fixed; /* Atur lebar kolom biar sama rata */
-}
-
-td {
-  padding: 20px 10px;
-  text-align: center;
-  border: 1px solid #cccccc; /* garis antar kolom dan baris */
-  align-items: center;
-  word-wrap: break-word; /* Supaya teks panjang pecah ke bawah */
-  overflow: auto;      /* Biar isi tidak keluar */
-}
-
-.table .header {
-  color: #ffffff;
-  padding: 10px 10px 40px 40px;
-}
-
-.data-training {
+  table-layout: fixed;
   width: 100%;
-  min-height: 100vh;
-  padding-top: 20px;
+  margin-bottom: 100px;
 }
 
-.data-training h1 {
+th, td {
   text-align: center;
 }
 
-h3 {
-  margin-bottom: 10px;
-  color: #2f4f2f;
-  text-align: center;
-}
-
-td select {
-  background-color: white;
-  color: #2f4f2f;
-  border-radius: 10px;
-  padding: 10px;
+option {
   text-align: center;
 }
