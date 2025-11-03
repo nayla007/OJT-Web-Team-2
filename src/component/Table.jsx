@@ -1,29 +1,37 @@
 import { useState } from "react";
 
 function Table({ data, className }) {
-  const [tableData, setTableData] = useState(
-    data.map(item => ({ ...item }))
-  );
+  const [tableData, setTableData] = useState(data.map((item) => ({ ...item })));
 
   const allMonths = [
-    "Januari", "Februari", "Maret", "April", "Mei", "Juni",
-    "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+    "Januari",
+    "Februari",
+    "Maret",
+    "April",
+    "Mei",
+    "Juni",
+    "Juli",
+    "Agustus",
+    "September",
+    "Oktober",
+    "November",
+    "Desember",
   ];
 
-    const tanggalPerBulan = {
-      Januari: ["20-28"],
-      Februari: ["11-15"],
-      Maret: ["17-24"],
-      April: ["01-07"],
-      Mei: ["08-17"],
-      Juni: ["10-18"],
-      Juli: ["18-27"],
-      Agustus: ["16-28"],
-      September: ["05-15"],
-      Oktober: ["24-30"],
-      November: ["11-19"],
-      Desember: ["03-09"],
-    };
+  const tanggalPerBulan = {
+    Januari: ["20-28"],
+    Februari: ["11-15"],
+    Maret: ["17-24"],
+    April: ["01-07"],
+    Mei: ["08-17"],
+    Juni: ["10-18"],
+    Juli: ["18-27"],
+    Agustus: ["16-28"],
+    September: ["05-15"],
+    Oktober: ["24-30"],
+    November: ["11-19"],
+    Desember: ["03-09"],
+  };
 
   const handleBulanChange = (index, bulan) => {
     const newData = [...tableData];
@@ -36,15 +44,15 @@ function Table({ data, className }) {
   };
 
   return (
-    <table className={className}>
+    <table class="table table-striped">
       <thead>
         <tr>
-          <th>No.</th>
-          <th>Nama Training</th>
-          <th>Biaya</th>
-          <th>Jumlah Hari</th>
-          <th>Bulan</th>
-          <th>Tanggal</th>
+          <th scope="col">No</th>
+          <th scope="col">Nama Training</th>
+          <th scope="col">Biaya</th>
+          <th scope="col">Jumlah hari</th>
+          <th scope="col">Bulan</th>
+          <th scope="col">Tanggal</th>
         </tr>
       </thead>
       <tbody>
@@ -56,6 +64,7 @@ function Table({ data, className }) {
             <td>{row.jmlHari}</td>
             <td>
               <select
+                className="form-select form-select-sm"
                 value={row.bulan}
                 onChange={(e) => handleBulanChange(index, e.target.value)}
               >
