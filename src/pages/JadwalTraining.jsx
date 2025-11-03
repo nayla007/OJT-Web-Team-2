@@ -353,9 +353,11 @@ function JadwalTraining() {
   return (
     <div className="data-training">
       <h1>Jadwal Training PT. Geo Mandiri Kreasi</h1>
+
       <a className="download-jadwal" href="./dokumen/jadwal_training.pdf" download>
       Download Jadwal Training 2025
       </a>
+
       <div className="container">
         <h3>Bidang Elevator dan Eskalator</h3>
         <Table className="table" data={dataElevator} />
