@@ -1,5 +1,5 @@
-import Table from "../components/Table";
-
+import Table from "../component/Table";
+import './JadwalTraining.css'
 function JadwalTraining() {
   const dataElevator = [
     {

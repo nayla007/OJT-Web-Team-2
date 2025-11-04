@@ -1,5 +1,5 @@
 
-
+import { NavLink, useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import Aos from 'aos';
 import "aos/dist/aos.css";
@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 export default function Navbar() {
+  const location = useLocation();
   const [isFixed, setIsFixed] = useState(false);
 
   useEffect(() => {
@@ -86,7 +87,7 @@ export default function Navbar() {
   <ul className="dropdown-menu dropdown-menu-end">
     <li>
       <a className="dropdown-item" href="#">
-        EN
+        ENG
       </a>
     </li>
   </ul>
@@ -102,6 +103,8 @@ export default function Navbar() {
     </div>
         </div>
       </div>
+
+
       {/* 🔹 Navbar */}
       <nav
         className={`navbar navbar-expand-lg navbar-light bg-white shadow-sm ${
@@ -114,24 +117,26 @@ export default function Navbar() {
           paddingTop: "0.4rem",
           paddingBottom: "0.4rem",
           height: "70px",
-          
         }}
       >
         <div className="container container-scroll">
-          <a className="navbar-brand fw-bold text-dark" href="#">
+          {/* 🔸 Logo */}
+          <NavLink className="navbar-brand fw-bold text-dark" to="/beranda">
             <img
               src="/image/logo-geo.png"
               alt="Logo"
-              style={{ width: "100px", // ukuran logo tetap
-      height: "auto",
-      marginRight: "2px",
-      maxHeight: "200px", // 🔹 batasi tinggi logo
-      objectFit: "contain",
-     }}
+              style={{
+                width: "100px",
+                height: "auto",
+                marginRight: "2px",
+                maxHeight: "200px",
+                objectFit: "contain",
+              }}
             />
             <span style={{ color: "#006d3b" }}>Geo Mandiri Kreasi</span>
-          </a>
+          </NavLink>
 
+          {/* 🔸 Toggler (mobile) */}
           <button
             className="navbar-toggler"
             type="button"
@@ -141,32 +146,70 @@ export default function Navbar() {
             <span className="navbar-toggler-icon"></span>
           </button>
 
+          {/* 🔸 Menu items */}
           <div className="collapse navbar-collapse justify-content-end" id="navbarMain">
             <ul className="navbar-nav align-items-center">
-              {["Home", "Jadwal Training", "Pelatihan K3", "News", "Contact"].map(
-                (item, i) => (
-                  <li key={i} className="nav-item">
-                    <a
-                      href="#"
-                      className="nav-link fw-semibold px-3"
-                      style={{ color: "#333" }}
-                      onMouseEnter={(e) => (e.target.style.color = "#006d3b")}
-                      onMouseLeave={(e) => (e.target.style.color = "#333")}
-                    >
-                      {item}
-                    </a>
-                  </li>
-                )
-              )}
+              <li className="nav-item">
+                <NavLink
+                  to="/beranda"
+                  className={({ isActive }) =>
+                    `nav-link fw-semibold px-3 ${
+                      isActive ? "text-success" : "text-dark"
+                    }`
+                  }
+                >
+                  Home
+                </NavLink>
+              </li>
+
+              <li className="nav-item">
+                <NavLink
+                  to="/jadwal-training"
+                  className={({ isActive }) =>
+                    `nav-link fw-semibold px-3 ${
+                      isActive ? "text-success" : "text-dark"
+                    }`
+                  }
+                >
+                  Jadwal Training
+                </NavLink>
+              </li>
+
+              <li className="nav-item">
+                <NavLink
+                  to="/pelatihan-k3"
+                  className={({ isActive }) =>
+                    `nav-link fw-semibold px-3 ${
+                      isActive ? "text-success" : "text-dark"
+                    }`
+                  }
+                >
+                  Pelatihan K3
+                </NavLink>
+              </li>
+
+              <li className="nav-item">
+                <NavLink
+                  to="/pendaftaran"
+                  className={({ isActive }) =>
+                    `nav-link fw-semibold px-3 ${
+                      isActive ? "text-success" : "text-dark"
+                    }`
+                  }
+                >
+                  Pendaftaran
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
       </nav>
 
-      {/* Spacer hanya muncul saat navbar fixed */}
+      {/* Spacer biar konten nggak ketutup navbar fixed */}
       {isFixed && <div style={{ height: "80px" }}></div>}
 
       {/* 🔹 Hero Section */}
+      {location.pathname === "/beranda" && (
       <div
         id="heroCarousel"
         className="carousel carousel-fade"
@@ -175,7 +218,7 @@ export default function Navbar() {
       >
         <div className="carousel-inner">
           {/* Slide 1 */}
-          <div className="carousel-item active">
+          <div className="carousel-item active ">
             <div
               className="d-flex align-items-center justify-content-center text-center text-light"
               style={{
@@ -192,8 +235,8 @@ export default function Navbar() {
                   backgroundColor: "rgba(0, 80, 50, 0.6)", // hijau gelap transparan
                 }}
               >
-                <div className="container">
-                  <h1 className="fw-bold display-4 mb-3 text-uppercase">
+                <div className="container ">
+                  <h1 className="fw-bold text-light display-4 mb-3 text-uppercase">
                     Mitra Terpercaya dalam Keselamatan dan Kepatuhan K3
                   </h1>
                   <p className="lead mb-4">
@@ -201,29 +244,7 @@ export default function Navbar() {
                     layanan konsultasi untuk memastikan lingkungan kerja 
                     Anda aman dan sesuai regulasi Kemenaker RI.
                   </p>
-                  <div>
-                    <a
-                      href="#"
-                      className="btn fw-semibold px-4 py-2 me-3"
-                      style={{
-                        backgroundColor: "#d4af37",
-                        color: "white",
-                        border: "none",
-                      }}
-                    >
-                      Jadwal Training K3
-                    </a>
-                    <a
-                      href="#"
-                      className="btn fw-semibold px-4 py-2"
-                      style={{
-                        border: "2px solid white",
-                        color: "white",
-                      }}
-                    >
-                      Layanan Konsultasi
-                    </a>
-                  </div>
+                  
                 </div>
               </div>
             </div>
@@ -248,7 +269,7 @@ export default function Navbar() {
                 }}
               >
                 <div className="container">
-                  <h1 className="fw-bold display-4 mb-3 text-uppercase">
+                  <h1 className="fw-bold text-light display-4 mb-3 text-uppercase">
                     Pelatihan K3 Bersertifikat Resmi Kemenaker RI
                   </h1>
                   <p className="lead mb-4">
@@ -257,29 +278,7 @@ export default function Navbar() {
                     Operator Crane, dan lainnya — 
                     dengan pengajar berpengalaman dan fasilitas lengkap.
                   </p>
-                  <div>
-                    <a
-                      href="#"
-                      className="btn fw-semibold px-4 py-2 me-3"
-                      style={{
-                        backgroundColor: "#d4af37",
-                        color: "white",
-                        border: "none",
-                      }}
-                    >
-                      Lihat Program Pelatihan
-                    </a>
-                    <a
-                      href="#"
-                      className="btn fw-semibold px-4 py-2"
-                      style={{
-                        border: "2px solid white",
-                        color: "white",
-                      }}
-                    >
-                      Daftar Sekarang
-                    </a>
-                  </div>
+                  
                 </div>
               </div>
             </div>
@@ -304,7 +303,7 @@ export default function Navbar() {
                 }}
               >
                 <div className="container">
-                  <h1 className="fw-bold display-4 mb-3 text-uppercase">
+                  <h1 className="fw-bold text-light display-4 mb-3 text-uppercase">
                     Layanan Inspeksi dan Pengujian Peralatan Kerja
                   </h1>
                   <p className="lead mb-4">
@@ -312,29 +311,7 @@ export default function Navbar() {
                     untuk memastikan keselamatan dan kepatuhan 
                     terhadap standar nasional dan internasional.
                   </p>
-                  <div>
-                    <a
-                      href="#"
-                      className="btn fw-semibold px-4 py-2 me-3"
-                      style={{
-                        backgroundColor: "#d4af37",
-                        color: "white",
-                        border: "none",
-                      }}
-                    >
-                      Cek Layanan Uji K3
-                    </a>
-                    <a
-                      href="#"
-                      className="btn fw-semibold px-4 py-2"
-                      style={{
-                        border: "2px solid white",
-                        color: "white",
-                      }}
-                    >
-                      Hubungi Kami
-                    </a>
-                  </div>
+                  
                 </div>
               </div>
             </div>
@@ -359,6 +336,7 @@ export default function Navbar() {
           <span className="carousel-control-next-icon"></span>
         </button>
       </div>
+      )}
     </div>
   );
 

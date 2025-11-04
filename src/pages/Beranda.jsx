@@ -3,6 +3,7 @@ import './Beranda.css'
 import React, { useEffect } from "react";// ⬅️ Tambahkan ini
 import Aos from 'aos';
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 
 export default function Beranda() {
   useEffect(() => {
@@ -141,11 +142,11 @@ export default function Beranda() {
   <div className="container">
     <div className="row align-items-center g-4">
       {/* Kolom Kiri - Teks */}
-      <div className="col-lg-6">
+      <div className="col-lg-6 ">
         <small className="fw-semibold text-light opacity-75">
           Pelatihan & Sertifikasi
         </small>
-        <h1 className="fw-bold mt-2" style={{ lineHeight: "1.2" }}>
+        <h1 className="fw-bold mt-2 text-light" style={{ lineHeight: "1.2" }}>
           INFORMASI PELATIHAN K3 <br /> SERTIFIKASI KEMNAKER & BNSP
         </h1>
         <p className="mt-4" style={{ lineHeight: "1.8", color: "#e0f2e9" }}>
@@ -163,12 +164,13 @@ export default function Beranda() {
         </p>
 
         <div className="mt-4">
-          <a
-            href="#"
+          <Link
+            to="/pendaftaran"
             className="btn fw-semibold px-4 py-2 rounded-1 shadow-sm"
             style={{
               backgroundColor: "#fff",
               color: "#006d3b",
+              textDecoration: "none",
             }}
             onMouseEnter={(e) => {
               e.target.style.backgroundColor = "#004d2c";
@@ -180,7 +182,7 @@ export default function Beranda() {
             }}
           >
             Daftar Pelatihan Sekarang
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -324,265 +326,164 @@ export default function Beranda() {
 </div>
 
 {/* Bagian News */}
-<div className="container my-5" data-aos="fade-up">
-  <div className="text-center mb-5">
-    <h2 className="fw-bold">Berita Perusahaan</h2>
-    <p className="text-muted">Lihat perkembangan terbaru dan kegiatan kami</p>
-  </div>
+<div className="program-section py-5 bg-light" data-aos="fade-up">
+  <div className="container text-center">
+    <h2 className="fw-bold mb-3">Program & Sertifikasi</h2>
+    <p className="text-muted mb-5">
+      Tingkatkan kompetensi Anda melalui pelatihan bersertifikat resmi dari Kementerian Ketenagakerjaan RI.
+    </p>
 
-  <div className="row g-4">
-    {/* Kolom Kiri - Berita Utama */}
-    <div className="col-lg-8">
-      <div className="card border-0 shadow-sm">
-        <img
-          src="https://source.unsplash.com/900x500/?business,coffee"
-          className="card-img-top rounded-top"
-          alt="Berita Utama"
-        />
-        <div className="card-body">
-          <h4 className="fw-bold">
-            Curabitur ut felis vel mi finibus – post with text and image blocks
-          </h4>
-          <p className="text-secondary">
-            Dofelis vel mi finibus pretium nec pretium tellus. Donec a purus
-            vehicula, fringilla ligula ac, posuere nisi. Cras nisl lacus,
-            volutpat a odio posuere, iaculis sollicitudin purus.
-          </p>
-          <a href="#" className="btn btn-success rounded-pill px-3 py-2">
-            Read more →
-          </a>
+    <div className="row g-4">
+      {/* Program 1 */}
+      <div className="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+        <div className="card h-100 border-0 shadow-sm rounded-4 p-3">
+          <div className="card-body">
+            <i className="bi bi-shield-check text-success fs-1 mb-3"></i>
+            <h5 className="fw-bold mb-2">Ahli K3 Umum</h5>
+            <p className="text-muted small mb-3">
+              Pelatihan kompetensi bagi calon ahli K3 yang diakui secara nasional dan bersertifikat Kemnaker RI.
+            </p>
+            <a href="/pendaftaran" className="btn btn-success btn-sm rounded-pill px-3">
+              Daftar Sekarang
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Program 2 */}
+      <div className="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+        <div className="card h-100 border-0 shadow-sm rounded-4 p-3">
+          <div className="card-body">
+            <i className="bi bi-fire text-danger fs-1 mb-3"></i>
+            <h5 className="fw-bold mb-2">Fire Safety</h5>
+            <p className="text-muted small mb-3">
+              Pelatihan penanggulangan kebakaran di tempat kerja sesuai standar keselamatan industri.
+            </p>
+            <a href="/pendaftaran" className="btn btn-danger btn-sm rounded-pill px-3">
+              Daftar Sekarang
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Program 3 */}
+      <div className="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+        <div className="card h-100 border-0 shadow-sm rounded-4 p-3">
+          <div className="card-body">
+            <i className="bi bi-heart-pulse text-primary fs-1 mb-3"></i>
+            <h5 className="fw-bold mb-2">P3K (Pertolongan Pertama)</h5>
+            <p className="text-muted small mb-3">
+              Pelatihan P3K untuk karyawan dan petugas keselamatan agar mampu menangani kondisi darurat kerja.
+            </p>
+            <a href="/pendaftaran" className="btn btn-primary btn-sm rounded-pill px-3">
+              Daftar Sekarang
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Program 4 */}
+      <div className="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+        <div className="card h-100 border-0 shadow-sm rounded-4 p-3">
+          <div className="card-body">
+            <i className="bi bi-truck text-warning fs-1 mb-3"></i>
+            <h5 className="fw-bold mb-2">Operator Forklift</h5>
+            <p className="text-muted small mb-3">
+              Program sertifikasi untuk operator forklift dengan standar keselamatan dan operasional industri.
+            </p>
+            <a href="/pendaftaran" className="btn btn-warning text-white btn-sm rounded-pill px-3">
+              Daftar Sekarang
+            </a>
+          </div>
         </div>
       </div>
     </div>
 
-    {/* Kolom Kanan - Daftar Berita Lain */}
-    <div className="col-lg-4">
-      <div className="d-flex flex-column gap-4">
-        {/* Item 1 */}
-        <div className="d-flex">
-          <img
-            src="https://source.unsplash.com/200x140/?art,design"
-            className="rounded me-3"
-            style={{ width: "120px", height: "80px", objectFit: "cover" }}
-            alt="Berita 1"
-          />
-          <div>
-            <h6 className="fw-bold mb-1">
-              Ut vulputate accumsan – post with images
-            </h6>
-            <small className="text-success">Marketing</small>
-            <br />
-            <small className="text-muted">8 November 2025</small>
-          </div>
-        </div>
-
-        {/* Item 2 */}
-        <div className="d-flex">
-          <img
-            src="https://source.unsplash.com/200x140/?office,team"
-            className="rounded me-3"
-            style={{ width: "120px", height: "80px", objectFit: "cover" }}
-            alt="Berita 2"
-          />
-          <div>
-            <h6 className="fw-bold mb-1">
-              Morbi mi neque consecte tur – post with lists
-            </h6>
-            <small className="text-success">Business</small>
-            <br />
-            <small className="text-muted">7 November 2025</small>
-          </div>
-        </div>
-
-        {/* Item 3 */}
-        <div className="d-flex">
-          <img
-            src="https://source.unsplash.com/200x140/?work,desk"
-            className="rounded me-3"
-            style={{ width: "120px", height: "80px", objectFit: "cover" }}
-            alt="Berita 3"
-          />
-          <div>
-            <h6 className="fw-bold mb-1">
-              Nulla glavrida – post with images & text
-            </h6>
-            <small className="text-success">Business</small>
-            <br />
-            <small className="text-muted">7 November 2025</small>
-          </div>
-        </div>
-      </div>
-
-      {/* Tombol Lihat Semua */}
-      <div className="text-center mt-5">
-        <a
-          href="/berita"
-          className="btn btn-warning text-white fw-semibold px-4 py-2 shadow-sm rounded-pill"
-        >
-          Lihat Semua Berita
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-
-      {/* Bagian Partner / Klien */}
-<div className="container-fluid py-5" data-aos="fade-up" style={{ backgroundColor: "#f8f9fa" }}>
-  <div className="text-center mb-5">
-    <h2 className="fw-bold text-dark">We are proud to work with these companies</h2>
-  </div>
-
-  {/* Wrapper animasi */}
-  <div className="logo-slider">
-    <div className="slide-track">
-      {/* Ulang logo 2x supaya looping-nya halus */}
-      {[...Array(2)].map((_, i) => (
-        <React.Fragment key={i}>
-          <div className="slide"><img src="/image/logo1.png" alt="Logo 1" /></div>
-          <div className="slide"><img src="/image/logo2.png" alt="Logo 2" /></div>
-          <div className="slide"><img src="/image/logo3.png" alt="Logo 3" /></div>
-          <div className="slide"><img src="/image/logo4.png" alt="Logo 4" /></div>
-          <div className="slide"><img src="/image/logo5.png" alt="Logo 5" /></div>
-          <div className="slide"><img src="/image/logo6.png" alt="Logo 6" /></div>
-          <div className="slide"><img src="/image/logo7.png" alt="Logo 7" /></div>
-          <div className="slide"><img src="/image/logo8.png" alt="Logo 8" /></div>
-        </React.Fragment>
-      ))}
+    <div className="text-center mt-5">
+      <a href="/program" className="btn btn-outline-success rounded-pill px-4">
+        Lihat Semua Program
+      </a>
     </div>
   </div>
 </div>
 
 
 
-      <footer
-      className="text-light pt-5 pb-3 position-relative overflow-hidden"
+      {/* Bagian Jadwal Training (Preview) */}
+{/* Bagian Jadwal Training */}
+<div className="container py-5" data-aos="fade-up">
+  <div className="text-center mb-5">
+    <h2 className="fw-bold text-dark">Jadwal Training Kami</h2>
+    <p className="text-muted">Pilih bidang pelatihan sesuai kebutuhan Anda</p>
+  </div>
+
+  <div className="row gy-4 justify-content-center">
+    {/* Baris pertama: 3 bidang */}
+    <div className="col-md-4">
+      <div className="p-4 shadow-sm bg-white rounded-3 text-center h-100">
+        <i className="bi bi-building-gear fs-1 text-primary mb-3"></i>
+        <h5 className="fw-bold">Bidang Elevator dan Eskalator</h5>
+        <p className="text-muted">Pelatihan teknis untuk instalasi, perawatan, dan inspeksi elevator serta eskalator.</p>
+      </div>
+    </div>
+
+    <div className="col-md-4">
+      <div className="p-4 shadow-sm bg-white rounded-3 text-center h-100">
+        <i className="bi bi-fire fs-1 text-danger mb-3"></i>
+        <h5 className="fw-bold">Bidang Penanggulangan Kebakaran</h5>
+        <p className="text-muted">Pelatihan keselamatan kerja dan sistem proteksi kebakaran industri.</p>
+      </div>
+    </div>
+
+    <div className="col-md-4">
+      <div className="p-4 shadow-sm bg-white rounded-3 text-center h-100">
+        <i className="bi bi-hammer fs-1 text-warning mb-3"></i>
+        <h5 className="fw-bold">Bidang Konstruksi dan Bangunan</h5>
+        <p className="text-muted">Peningkatan kompetensi pekerja di bidang konstruksi dan pengawasan bangunan.</p>
+      </div>
+    </div>
+
+    {/* Baris kedua: 2 bidang, ditengah */}
+    <div className="col-md-4">
+      <div className="p-4 shadow-sm bg-white rounded-3 text-center h-100">
+        <i className="bi bi-gear-wide-connected fs-1 text-success mb-3"></i>
+        <h5 className="fw-bold">Bidang Pesawat Angkat dan Pesawat Angkut</h5>
+        <p className="text-muted">Pelatihan operator dan teknisi alat berat, crane, serta sistem angkut industri.</p>
+      </div>
+    </div>
+
+    <div className="col-md-4">
+      <div className="p-4 shadow-sm bg-white rounded-3 text-center h-100">
+        <i className="bi bi-lightning-charge fs-1 text-info mb-3"></i>
+        <h5 className="fw-bold">Bidang Pesawat Tenaga dan Produksi</h5>
+        <p className="text-muted">Pelatihan penggunaan dan perawatan mesin produksi serta sistem tenaga industri.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div className="text-center mt-3">
+    <Link
+      to="/jadwal-training"
+      className="btn btn-success px-5 py-2 fw-semibold shadow-sm"
       style={{
-        background: "linear-gradient(135deg, #006d3b, #009e60)", // hijau tua toska gelap
+        backgroundColor: "#006d3b",
+        borderRadius: "6px",
+        transition: "0.3s",
+        textDecoration: "none",
       }}
-      data-aos="fade-up"
+      onMouseEnter={(e) => (e.target.style.backgroundColor = "#004d2c")}
+      onMouseLeave={(e) => (e.target.style.backgroundColor = "#006d3b")}
     >
-      {/* Dekorasi lingkaran */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: "-150px",
-          left: "-150px",
-          width: "400px",
-          height: "400px",
-          borderRadius: "50%",
-          border: "1px solid rgba(255,255,255,0.05)",
-        }}
-      ></div>
-      <div
-        style={{
-          position: "absolute",
-          top: "-100px",
-          right: "-100px",
-          width: "300px",
-          height: "100px",
-          borderRadius: "50%",
-          border: "1px solid rgba(255,255,255,0.05)",
-        }}
-      ></div>
-
-      <div className="container position-relative">
-        <div className="row gy-3 align-items-start">
-          {/* Kolom 1 - Logo & Info */}
-          <div className="col-md-4 " style={{ marginTop: "-20px" }}>
-            <div className="d-flex align-items-center mb-2">
-              <img
-                src="/image/logo-geo.png"
-                alt="Logo"
-                style={{ height: "100px", marginRight: "10px", paddingTop: "10px"}}
-              />
-              <h5 className="m-0 fw-bold text-light">PT Geo Mandiri Kreasi</h5>
-            </div>
-            <p className="text-muted-light small mb-4">
-              PT Geo Mandiri Kreasi adalah perusahaan yang bergerak di bidang
-              konsultan, pelatihan K3, dan event management. Kami berkomitmen
-              untuk memberikan pelayanan terbaik dengan profesionalisme tinggi.
-            </p>
-            <div className="d-flex gap-3 fs-5">
-              <a href="#" className="text-light">
-                <i className="bi bi-facebook"></i>
-              </a>
-              <a href="#" className="text-light">
-                <i className="bi bi-instagram"></i>
-              </a>
-              <a href="#" className="text-light">
-                <i className="bi bi-linkedin"></i>
-              </a>
-              <a href="#" className="text-light">
-                <i className="bi bi-youtube"></i>
-              </a>
-            </div>
-          </div>
-
-          {/* Kolom 2 - Pusat Pelatihan & Kontak */}
-<div className="col-md-4">
-  <h6 className="fw-bold text-light mb-3">Pusat Pelatihan</h6>
-  <ul className="list-unstyled small text-muted-light">
-    <li className="mb-2">
-      <span className="text-muted-light">
-        Rukan Kaca Hijau, Jl. Raya Jatirwaringin No. 6C
-      </span>
-    </li>
-    <li className="mb-2">
-      <strong className="text-light">Telepon:</strong>{" "}
-      <a
-        href="tel:0218621510"
-        className="text-muted-light text-decoration-none"
-        onMouseEnter={(e) => (e.target.style.color = "#d4af37")}
-        onMouseLeave={(e) => (e.target.style.color = "#aaa")}
-      >
-        021 862 1510
-      </a>
-    </li>
-    <li className="mb-2">
-      <strong className="text-light">Email:</strong>{" "}
-      <a
-        href="mailto:info@geomandiri.co.id"
-        className="text-muted-light text-decoration-none"
-        onMouseEnter={(e) => (e.target.style.color = "#d4af37")}
-        onMouseLeave={(e) => (e.target.style.color = "#aaa")}
-      >
-        info@geomandiri.co.id
-      </a>
-    </li>
-  </ul>
+      Lihat Jadwal Lengkap
+    </Link>
+  </div>
 </div>
 
 
-          {/* Kolom 3 - Stay Connected */}
-          <div className="col-md-4">
-            <h6 className="fw-bold text-light mb-3">Stay Connected</h6>
-            <p className="text-muted-light small">
-              Daftarkan email Anda untuk mendapatkan informasi dan tips terbaru
-              seputar layanan kami serta pelatihan K3.
-            </p>
-            <button
-              className="btn btn-warning fw-semibold mt-2"
-              style={{
-                color: "#fff",
-                borderRadius: "30px",
-                padding: "8px 22px",
-              }}
-            >
-              Daftar Newsletter
-            </button>
-          </div>
-        </div>
 
-        {/* Garis bawah */}
-        <hr className="border mt-5" />
 
-        {/* Copyright */}
-        <div className="text-center text-muted-light small text-light">
-          © 2025 PT Geo Mandiri Kreasi. All rights reserved. | Powered by{" "}
-          <span style={{ color: "#00bfa5" }}>GeoMandiri</span>
-        </div>
-      </div>
-    </footer>
+
 
   </div>
 
