@@ -1,32 +1,31 @@
-
 import { useState, useEffect } from "react";
 import axios from "axios";
-// import './Pendaftaran.css'
 
 export default function Pendaftaran() {
-  const [daftar, setDaftar] = useState([]);
+  const [dataPendaftar, setDataPendaftar] = useState([]);
   const [institusi, setInstitusi] = useState("");
   const [alamat, setAlamat] = useState("");
   const [telepon, setTelepon] = useState("");
   const [fax, setFax] = useState("");
   const [email, setEmail] = useState("");
 
-  const [nama, setNama] = useState("");
+  const [namaPeserta, setNamaPeserta] = useState("");
   const [telPeserta, setTelPeserta] = useState("");
   const [emailPeserta, setEmailPeserta] = useState("");
   const [pelatihan, setPelatihan] = useState("");
- 
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    const API_URL = "http://localhost:5000/data-pendaftar"
 
     axios
-      .post("", {
+      .post(API_URL, {
         institusi: institusi,
         alamat: alamat,
         telepon: telepon,
         fax: fax,
         email: email,
-        nama: nama,
+        namaPeserta: namaPeserta,
         telPeserta: telPeserta,
         emailPeserta: emailPeserta,
         pelatihan: pelatihan,
@@ -37,7 +36,7 @@ export default function Pendaftaran() {
         setTelepon("");
         setFax("");
         setEmail("");
-        setNama("");
+        setNamaPeserta("");
         setTelPeserta("");
         setEmailPeserta("");
         setPelatihan("");
@@ -93,7 +92,7 @@ export default function Pendaftaran() {
             </label>
             <div className="col-sm-3">
               <input
-                type="number"
+                type="text"
                 placeholder="No. Telepon Institusi"
                 className="form-control"
                 id="telepon"
@@ -140,17 +139,17 @@ export default function Pendaftaran() {
           <h3 className="text-center">Data Peserta </h3>
 
           <div className="mb-3 row">
-            <label htmlFor="nama" className="col-sm-2 col-form-label">
+            <label htmlFor="namaPeserta" className="col-sm-2 col-form-label">
               Nama Lengkap
             </label>
             <div className="col-sm-10">
               <input
                 type="text"
                 className="form-control"
-                id="nama"
+                id="namaPeserta"
                 placeholder="Nama Peserta"
-                value={nama}
-                onChange={(e) => setNama(e.target.value)}
+                value={namaPeserta}
+                onChange={(e) => setNamaPeserta(e.target.value)}
               />
             </div>
           </div>
@@ -161,7 +160,7 @@ export default function Pendaftaran() {
             </label>
             <div className="col-sm-3">
               <input
-                type="number"
+                type="text"
                 className="form-control"
                 placeholder="No. Telepon Peserta"
                 id="telPeserta"
@@ -199,21 +198,46 @@ export default function Pendaftaran() {
                 onChange={(e) => setPelatihan(e.target.value)}
               >
                 <option value="">-- Pilih Sertifikasi --</option>
-                <option value="Internal Auditor SMK3">Internal Auditor SMK3</option>
-                <option value="Operator Penggerak Mula Jenis Genset">Operator Penggerak Mula Jenis Genset</option>
-                <option value="Petugas P3K Ditempat Kerja">Petugas P3K Ditempat Kerja</option>
+                <option value="Internal Auditor SMK3">
+                  Internal Auditor SMK3
+                </option>
+                <option value="Ahli K3 Kimia">Ahli K3 Kimia</option>
+                <option value="Ahli K3 Listrik">Ahli K3 Listrik</option>
+                <option value="Ahli K3 Muda Lingkungan Kerja">Ahli K3 Muda Lingkungan Kerja</option>
+                <option value="Ahli K3 PAA">Ahli K3 PAA</option>
+                <option value="Ahli K3 Pesawat Angkat dan Pesawat Angkut">Ahli K3 Pesawat Angkat dan Pesawat Angkut</option>
+                <option value="Ahli K3 Spesialis Kebakaran(Paket DCBA)">Ahli K3 Spesialis Kebakaran (Paket DCBA)</option>
+                <option value="Ahli K3 Umum">Ahli K3 Umum</option>
+                <option value="Ahli Muda K3 Konstruksi">Ahli Muda K3 Konstruksi</option>
+                <option value="Juru Ikat">Juru Ikat</option>
+                <option value="Juru Las (Welder)">Juru Las (Welder)</option>
+                <option value="K3 Kebakaran Kelas DCBA">K3 Kebakaran Kelas DCBA</option>
+                <option value="Operator Penggerak Mula Jenis Genset">
+                  Operator Penggerak Mula Jenis Genset
+                </option>
+                <option value="Petugas P3K Ditempat Kerja">
+                  Petugas P3K Ditempat Kerja
+                </option>
                 <option value="Teknisi K3 Listrik">Teknisi K3 Listrik</option>
                 <option value="TKBT Tingkat II">TKBT Tingkat II</option>
-                <option value="Supervisi K3 Perancah">Supervisi K3 Perancah</option>
-                <option value="Teknisi K3 Deteksi Gas">Teknisi K3 Deteksi Gas</option>
+                <option value="Supervisi K3 Perancah">
+                  Supervisi K3 Perancah
+                </option>
+                <option value="Teknisi K3 Deteksi Gas">
+                  Teknisi K3 Deteksi Gas
+                </option>
                 <option value="Teknisi K3 Listrik">Teknisi K3 Listrik</option>
                 <option value="Teknisi K3 PAA">Teknisi K3 PAA</option>
                 <option value="Teknisi K3 Perancah">Teknisi K3 Perancah</option>
                 <option value="Teknisi K3 PTP">Teknisi K3 PTP</option>
-                <option value="Teknisi K3 Tangki Timbun dan Bejana Tekan">Teknisi K3 Tangki Timbun dan Bejana Tekan</option>
+                <option value="Teknisi K3 Tangki Timbun dan Bejana Tekan">
+                  Teknisi K3 Tangki Timbun dan Bejana Tekan
+                </option>
                 <option value="Teknisi PTP.doc">Teknisi PTP.doc</option>
                 <option value="TKBT Level 2">TKBT Level 2</option>
-                <option value="TKBT Tingkat 1 dan 2">TKBT Tingkat 1 dan 2</option>
+                <option value="TKBT Tingkat 1 dan 2">
+                  TKBT Tingkat 1 dan 2
+                </option>
                 <option value=""></option>
               </select>
             </div>
@@ -224,6 +248,20 @@ export default function Pendaftaran() {
           </button>
         </div>
       </form>
+
+
+      <div className="mb-3 text-center">
+        <p>---atau---</p>
+        <a
+          href="/Formulir_Pendaftaran.doc"
+          download
+          target="_blank"
+          className="btn btn-success ms-2"
+        >
+          Download Formulir (.doc)
+        </a>
+      </div>
+
     </section>
   );
 }
