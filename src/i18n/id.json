@@ -1,0 +1,58 @@
+{
+  "navbar": {
+    "home": "Beranda",
+    "training_schedule": "Jadwal Pelatihan",
+    "training_k3": "Pelatihan K3",
+    "registration": "Pendaftaran",
+    "phone": "telp: 021-11-2123-900"
+  },
+  "dropdown": {
+    "id": "ID",
+    "eng": "ENG"
+  },
+  "hero": {
+    "slide1": {
+      "title": "Mitra Terpercaya dalam Keselamatan dan Kepatuhan K3",
+      "description": "PT Geo Mandiri Kreasi menyediakan pelatihan K3 bersertifikasi dan layanan konsultasi untuk memastikan lingkungan kerja Anda aman dan sesuai regulasi Kemenaker RI."
+    },
+    "slide2": {
+      "title": "Pelatihan K3 Bersertifikat Resmi Kemenaker RI",
+      "description": "Kami menyelenggarakan berbagai program pelatihan seperti Ahli K3 Umum, K3 Listrik, Operator Crane, dan lainnya — dengan pengajar berpengalaman dan fasilitas lengkap."
+    },
+    "slide3": {
+      "title": "Layanan Inspeksi dan Pengujian Peralatan Kerja",
+      "description": "Tenaga ahli kami melakukan riksa uji peralatan dan lingkungan kerja untuk memastikan keselamatan dan kepatuhan terhadap standar nasional dan internasional."
+    }
+  },
+  "features": {
+    "safety_training": "Pelatihan K3",
+    "training_sdm": "Training SDM",
+    "consultant": "Divisi Konsultan",
+    "event": "Event Organizer",
+    "desc1": "Training dan Konsultan K3 Lainnya...",
+    "desc2": "Soft Skill, Leadership, Management, Tim Building, ITC.",
+    "desc3": "Konsultan Perencanaan & Tata Ruang, Survey & Teknologi IT.",
+    "desc4": "Corporate Event, Family Gathering, Publikasi & Promosi."
+  },
+  "about": {
+    "title": "Selamat Datang di Geo Mandiri Kreasi",
+    "desc": "PT Geo Mandiri Kreasi adalah perusahaan yang bergerak di bidang konsultasi, pelatihan, dan jasa inspeksi terkait Keselamatan dan Kesehatan Kerja (K3) serta konstruksi. Sebagai badan usaha resmi dan tersertifikasi, kami berkomitmen untuk mendukung terciptanya lingkungan kerja yang aman, efisien, dan sesuai regulasi.",
+    "points": {
+      "1": "Terdaftar sebagai <strong>PJK3 resmi</strong> dan anggota INKINDO DKI Jakarta",
+      "2": "Menyediakan <strong>pelatihan K3 bersertifikasi Kemenaker RI</strong>",
+      "3": "Layanan <strong>konsultasi dan inspeksi K3</strong> terpercaya",
+      "4": "Berorientasi pada <strong>keselamatan, kualitas, dan kepatuhan</strong>"
+    }
+  },
+  "infoK3": {
+    "subtitle": "Pelatihan & Sertifikasi",
+    "title": "INFORMASI PELATIHAN K3 <br /> SERTIFIKASI KEMNAKER & BNSP",
+    "desc1": "Setiap perusahaan di Indonesia wajib menerapkan K3 di lingkungan kerjanya. Kini, pelatihan dan sertifikasi K3 juga dapat dilakukan secara online, seperti yang diselenggarakan oleh <span class='fw-semibold text-white'>PT GEO MANDIRI KREASI</span> di Jakarta.",
+    "desc2": "Pelatihan ini membantu tenaga kerja memahami dan menerapkan prinsip keselamatan serta kesehatan kerja di berbagai bidang industri — mulai dari ahli K3, operator, hingga teknisi."
+  },
+  "button": {
+    "detail": "Detail",
+    "register_now": "Daftar Pelatihan Sekarang",
+    "view_schedule": "Lihat Jadwal Lengkap"
+  }
+}

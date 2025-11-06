@@ -4,6 +4,7 @@ import React, { useEffect } from "react";// ⬅️ Tambahkan ini
 import Aos from 'aos';
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next"; // 
 
 export default function Beranda() {
   useEffect(() => {
@@ -11,6 +12,12 @@ export default function Beranda() {
     easing: "ease-in-out", // transisi lebih smooth
     offset: 100,});
   }, []);
+
+  const { t, i18n } = useTranslation(); // 🔹 Hook i18n
+  
+    const changeLanguage = (lang) => {
+      i18n.changeLanguage(lang);
+    };
 
   return (
   <div>
@@ -23,12 +30,12 @@ export default function Beranda() {
       <div className="col-md-6 col-lg-3">
         <div className="p-4 border-0 bg-white h-100 shadow-sm rounded-3">
           <i className="bi bi-people fs-1 text-success mb-3"></i>
-          <h5 className="fw-bold">Safety Training</h5>
+          <h5 className="fw-bold">{t("features.safety_training")}</h5>
           <p className="text-muted small">
-            Training dan Konsultan K3 Lainnya...
+            {t("features.desc1")}
           </p>
           <button className="btn btn-warning rounded-pill px-4 mt-2">
-            Detail
+            {t("button.detail")}
           </button>
         </div>
       </div>
@@ -37,12 +44,12 @@ export default function Beranda() {
       <div className="col-md-6 col-lg-3">
         <div className="p-4 border-0 bg-white h-100 shadow-sm rounded-3">
           <i className="bi bi-arrow-repeat fs-1 text-success mb-3"></i>
-          <h5 className="fw-bold">Training SDM</h5>
+          <h5 className="fw-bold">{t("features.training_sdm")}</h5>
           <p className="text-muted small">
-            Soft Skill, Leadership, Management, Tim Building, ITC.
+           {t("features.desc2")}
           </p>
           <button className="btn btn-warning rounded-pill px-4 mt-2">
-            Detail
+            {t("button.detail")}
           </button>
         </div>
       </div>
@@ -51,12 +58,12 @@ export default function Beranda() {
       <div className="col-md-6 col-lg-3">
         <div className="p-4 border-0 bg-white h-100 shadow-sm rounded-3">
           <i className="bi bi-life-preserver fs-1 text-success mb-3"></i>
-          <h5 className="fw-bold">Divisi Consultant</h5>
+          <h5 className="fw-bold">{t("features.consultant")}</h5>
           <p className="text-muted small">
-            Konsultan Perencanaan & Tata Ruang, Survey & Teknologi IT.
+            {t("features.desc3")}
           </p>
           <button className="btn btn-warning rounded-pill px-4 mt-2">
-            Detail
+            {t("button.detail")}
           </button>
         </div>
       </div>
@@ -65,12 +72,12 @@ export default function Beranda() {
       <div className="col-md-6 col-lg-3">
         <div className="p-4 border-0 bg-white h-100 shadow-sm rounded-3">
           <i className="bi bi-currency-dollar fs-1 text-success mb-3"></i>
-          <h5 className="fw-bold">Event Organizer</h5>
+          <h5 className="fw-bold">{t("features.event")}</h5>
           <p className="text-muted small">
-            Corporate Event, Family Gathering, Publikasi & Promosi.
+            {t("features.desc4")}
           </p>
           <button className="btn btn-warning rounded-pill px-4 mt-2">
-            Detail
+            {t("button.detail")}
           </button>
         </div>
       </div>
@@ -93,38 +100,23 @@ export default function Beranda() {
 
     {/* Kolom Teks - Sebelah Kanan */}
     <div className="col-md-6">
-      <h2 className="fw-bold mb-3">Selamat Datang di Geo Mandiri Kreasi</h2>
-      <p className="text-muted mb-4">
-        PT Geo Mandiri Kreasi adalah perusahaan yang bergerak di bidang 
-        <strong> konsultasi, pelatihan, dan jasa inspeksi terkait 
-        Keselamatan dan Kesehatan Kerja (K3) serta konstruksi</strong>. 
-        Sebagai badan usaha resmi dan tersertifikasi, kami berkomitmen untuk 
-        mendukung terciptanya lingkungan kerja yang aman, efisien, dan sesuai regulasi.
-      </p>
+      <h2 className="fw-bold mb-3">{t("about.title")}</h2>
+      <p
+    className="text-muted mb-4"
+    dangerouslySetInnerHTML={{ __html: t("about.desc") }}
+  ></p>
 
       {/* Daftar dengan ikon centang */}
       <ul className="list-unstyled mb-4">
-        <li className="d-flex align-items-start mb-2">
-          <i className="bi bi-check2 text-success me-2 fs-5"></i>
-          <span>Terdaftar sebagai <strong>PJK3 resmi</strong> dan anggota INKINDO DKI Jakarta</span>
-        </li>
-        <li className="d-flex align-items-start mb-2">
-          <i className="bi bi-check2 text-success me-2 fs-5"></i>
-          <span>Menyediakan <strong>pelatihan K3 bersertifikasi Kemenaker RI</strong></span>
-        </li>
-        <li className="d-flex align-items-start mb-2">
-          <i className="bi bi-check2 text-success me-2 fs-5"></i>
-          <span>Layanan <strong>konsultasi dan inspeksi K3</strong> terpercayan</span>
-        </li>
-        <li className="d-flex align-items-start">
-          <i className="bi bi-check2 text-success me-2 fs-5"></i>
-          <span>Berorientasi pada <strong>keselamatan, kualitas, dan kepatuhan</strong></span>
-        </li>
-      </ul>
-
-      <a href="#" className="btn btn-success text-white fw-semibold px-4">
-        Pelajari Lebih Lanjut
-      </a>
+    {[1, 2, 3, 4].map((i) => (
+      <li key={i} className="d-flex align-items-start mb-2">
+        <i className="bi bi-check2 text-success me-2 fs-5"></i>
+        <span
+          dangerouslySetInnerHTML={{ __html: t(`about.points.${i}`) }}
+        ></span>
+      </li>
+    ))}
+  </ul>
     </div>
   </div>
 </div>
@@ -144,24 +136,23 @@ export default function Beranda() {
       {/* Kolom Kiri - Teks */}
       <div className="col-lg-6 ">
         <small className="fw-semibold text-light opacity-75">
-          Pelatihan & Sertifikasi
+           {t("infoK3.subtitle")}
         </small>
-        <h1 className="fw-bold mt-2 text-light" style={{ lineHeight: "1.2" }}>
-          INFORMASI PELATIHAN K3 <br /> SERTIFIKASI KEMNAKER & BNSP
-        </h1>
-        <p className="mt-4" style={{ lineHeight: "1.8", color: "#e0f2e9" }}>
-          Setiap perusahaan di Indonesia wajib menerapkan K3 di lingkungan
-          kerjanya. Kini, pelatihan dan sertifikasi K3 juga dapat dilakukan
-          secara online, seperti yang diselenggarakan oleh{" "}
-          <span className="fw-semibold text-white">PT GEO MANDIRI KREASI</span> di
-          Jakarta.
-        </p>
+        <h1
+          className="fw-bold mt-2 text-light"
+          style={{ lineHeight: "1.2" }}
+          dangerouslySetInnerHTML={{ __html: t("infoK3.title") }}
+        ></h1>
+         <p
+          className="mt-4"
+          style={{ lineHeight: "1.8", color: "#e0f2e9" }}
+          dangerouslySetInnerHTML={{ __html: t("infoK3.desc1") }}
+        ></p>
 
-        <p style={{ lineHeight: "1.8", color: "#e0f2e9" }}>
-          Pelatihan ini membantu tenaga kerja memahami dan menerapkan prinsip
-          keselamatan serta kesehatan kerja di berbagai bidang industri — mulai
-          dari ahli K3, operator, hingga teknisi.
-        </p>
+        <p
+          style={{ lineHeight: "1.8", color: "#e0f2e9" }}
+          dangerouslySetInnerHTML={{ __html: t("infoK3.desc2") }}
+        ></p>
 
         <div className="mt-4">
           <Link
@@ -181,7 +172,7 @@ export default function Beranda() {
               e.target.style.color = "#006d3b";
             }}
           >
-            Daftar Pelatihan Sekarang
+            {t("button.register_now")}
           </Link>
         </div>
       </div>
@@ -325,90 +316,6 @@ export default function Beranda() {
   </div>
 </div>
 
-{/* Bagian News */}
-<div className="program-section py-5 bg-light" data-aos="fade-up">
-  <div className="container text-center">
-    <h2 className="fw-bold mb-3">Program & Sertifikasi</h2>
-    <p className="text-muted mb-5">
-      Tingkatkan kompetensi Anda melalui pelatihan bersertifikat resmi dari Kementerian Ketenagakerjaan RI.
-    </p>
-
-    <div className="row g-4">
-      {/* Program 1 */}
-      <div className="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
-        <div className="card h-100 border-0 shadow-sm rounded-4 p-3">
-          <div className="card-body">
-            <i className="bi bi-shield-check text-success fs-1 mb-3"></i>
-            <h5 className="fw-bold mb-2">Ahli K3 Umum</h5>
-            <p className="text-muted small mb-3">
-              Pelatihan kompetensi bagi calon ahli K3 yang diakui secara nasional dan bersertifikat Kemnaker RI.
-            </p>
-            <a href="/pendaftaran" className="btn btn-success btn-sm rounded-pill px-3">
-              Daftar Sekarang
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Program 2 */}
-      <div className="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
-        <div className="card h-100 border-0 shadow-sm rounded-4 p-3">
-          <div className="card-body">
-            <i className="bi bi-fire text-danger fs-1 mb-3"></i>
-            <h5 className="fw-bold mb-2">Fire Safety</h5>
-            <p className="text-muted small mb-3">
-              Pelatihan penanggulangan kebakaran di tempat kerja sesuai standar keselamatan industri.
-            </p>
-            <a href="/pendaftaran" className="btn btn-danger btn-sm rounded-pill px-3">
-              Daftar Sekarang
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Program 3 */}
-      <div className="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
-        <div className="card h-100 border-0 shadow-sm rounded-4 p-3">
-          <div className="card-body">
-            <i className="bi bi-heart-pulse text-primary fs-1 mb-3"></i>
-            <h5 className="fw-bold mb-2">P3K (Pertolongan Pertama)</h5>
-            <p className="text-muted small mb-3">
-              Pelatihan P3K untuk karyawan dan petugas keselamatan agar mampu menangani kondisi darurat kerja.
-            </p>
-            <a href="/pendaftaran" className="btn btn-primary btn-sm rounded-pill px-3">
-              Daftar Sekarang
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Program 4 */}
-      <div className="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
-        <div className="card h-100 border-0 shadow-sm rounded-4 p-3">
-          <div className="card-body">
-            <i className="bi bi-truck text-warning fs-1 mb-3"></i>
-            <h5 className="fw-bold mb-2">Operator Forklift</h5>
-            <p className="text-muted small mb-3">
-              Program sertifikasi untuk operator forklift dengan standar keselamatan dan operasional industri.
-            </p>
-            <a href="/pendaftaran" className="btn btn-warning text-white btn-sm rounded-pill px-3">
-              Daftar Sekarang
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div className="text-center mt-5">
-      <a href="/program" className="btn btn-outline-success rounded-pill px-4">
-        Lihat Semua Program
-      </a>
-    </div>
-  </div>
-</div>
-
-
-
       {/* Bagian Jadwal Training (Preview) */}
 {/* Bagian Jadwal Training */}
 <div className="container py-5" data-aos="fade-up">
@@ -480,12 +387,34 @@ export default function Beranda() {
   </div>
 </div>
 
-
-
-
-
-
+{/* Bagian Partner / Klien */}
+<div className="container-fluid py-5" data-aos="fade-up" style={{ backgroundColor: "#f8f9fa" }}>
+  <div className="text-center mb-5">
+    <h2 className="fw-bold text-dark">We are proud to work with these companies</h2>
   </div>
+
+  {/* Wrapper animasi */}
+  <div className="logo-slider">
+    <div className="slide-track">
+      {/* Ulang logo 2x supaya looping-nya halus */}
+      {[...Array(2)].map((_, i) => (
+        <React.Fragment key={i}>
+          <div className="slide"><img src="/image/pt.png" alt="Logo 1" /></div>
+          <div className="slide"><img src="/image/logo2.png" alt="Logo 2" /></div>
+          <div className="slide"><img src="/image/logo3.png" alt="Logo 3" /></div>
+          <div className="slide"><img src="/image/logo4.png" alt="Logo 4" /></div>
+          <div className="slide"><img src="/image/logo5.png" alt="Logo 5" /></div>
+          <div className="slide"><img src="/image/logo6.png" alt="Logo 6" /></div>
+          <div className="slide"><img src="/image/logo7.png" alt="Logo 7" /></div>
+          <div className="slide"><img src="/image/logo8.png" alt="Logo 8" /></div>
+        </React.Fragment>
+      ))}
+    </div>
+  </div>
+</div>
+
+
+</div>
 
 
 

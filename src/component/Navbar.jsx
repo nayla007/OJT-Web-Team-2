@@ -5,10 +5,16 @@ import Aos from 'aos';
 import "aos/dist/aos.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import { useTranslation } from "react-i18next"; // 
 
 export default function Navbar() {
   const location = useLocation();
   const [isFixed, setIsFixed] = useState(false);
+  const { t, i18n } = useTranslation(); // 🔹 Hook i18n
+
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+  };
 
   useEffect(() => {
       Aos.init({ duration: 1000, once: false,
@@ -49,9 +55,14 @@ export default function Navbar() {
           
           {/* 🔸 Kiri: Ikon Sosial Media */}
     <div className="d-flex align-items-center">
-      <a href="#" className="text-dark me-3">
-        <i className="bi bi-instagram"></i>
-      </a>
+      <a
+    href="https://www.instagram.com/geomandirigroupcreative/" 
+    className="text-dark me-3"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <i className="bi bi-instagram"></i>
+  </a>
       <a href="#" className="text-dark me-3">
         <i className="bi bi-twitter"></i>
       </a>
@@ -71,7 +82,7 @@ export default function Navbar() {
         className="text-dark me-3 text-decoration-none d-flex align-items-center"
       >
         <i className="bi bi-telephone me-2"></i>
-        telp: 021-11-2123-900
+        {t("navbar.phone")}
       </a>
       {/* Bahasa */}
 <div className="dropdown me-3" style={{ zIndex: 9999 }}>
@@ -82,23 +93,15 @@ export default function Navbar() {
     data-bs-toggle="dropdown"
     aria-expanded="false"
   >
-    ID
+    {i18n.language.toUpperCase()}
   </a>
   <ul className="dropdown-menu dropdown-menu-end">
-    <li>
-      <a className="dropdown-item" href="#">
-        ENG
-      </a>
-    </li>
+      <li><button className="dropdown-item" onClick={() => changeLanguage("id")}>{t("dropdown.id")}</button></li>
+      <li><button className="dropdown-item" onClick={() => changeLanguage("en")}>{t("dropdown.eng")}</button></li>
   </ul>
 </div>
-      {/* Tombol Registrasi */}
-      <a
-        href="#"
-        className="btn btn-outline-success btn-sm"
-        style={{ borderColor: "#006d3b", color: "#006d3b" }}
-      >
-        Pendaftaran
+      <a href="#" className="btn btn-outline-success btn-sm" style={{ borderColor: "#006d3b", color: "#006d3b" }}>
+              {t("navbar.registration")}
       </a>
     </div>
         </div>
@@ -158,7 +161,7 @@ export default function Navbar() {
                     }`
                   }
                 >
-                  Home
+                  {t("navbar.home")}
                 </NavLink>
               </li>
 
@@ -171,7 +174,7 @@ export default function Navbar() {
                     }`
                   }
                 >
-                  Jadwal Training
+                  {t("navbar.training_schedule")}
                 </NavLink>
               </li>
 
@@ -184,7 +187,7 @@ export default function Navbar() {
                     }`
                   }
                 >
-                  Pelatihan K3
+                  {t("navbar.training_k3")}
                 </NavLink>
               </li>
 
@@ -197,7 +200,7 @@ export default function Navbar() {
                     }`
                   }
                 >
-                  Pendaftaran
+                  {t("navbar.registration")}
                 </NavLink>
               </li>
             </ul>
@@ -237,12 +240,10 @@ export default function Navbar() {
               >
                 <div className="container ">
                   <h1 className="fw-bold text-light display-4 mb-3 text-uppercase">
-                    Mitra Terpercaya dalam Keselamatan dan Kepatuhan K3
+                    {t("hero.slide1.title")}
                   </h1>
                   <p className="lead mb-4">
-                    PT Geo Mandiri Kreasi menyediakan pelatihan K3 bersertifikasi dan 
-                    layanan konsultasi untuk memastikan lingkungan kerja 
-                    Anda aman dan sesuai regulasi Kemenaker RI.
+                    {t("hero.slide1.description")}
                   </p>
                   
                 </div>
@@ -270,13 +271,10 @@ export default function Navbar() {
               >
                 <div className="container">
                   <h1 className="fw-bold text-light display-4 mb-3 text-uppercase">
-                    Pelatihan K3 Bersertifikat Resmi Kemenaker RI
+                    {t("hero.slide2.title")}
                   </h1>
                   <p className="lead mb-4">
-                    Kami menyelenggarakan berbagai program pelatihan 
-                    seperti Ahli K3 Umum, K3 Listrik, 
-                    Operator Crane, dan lainnya — 
-                    dengan pengajar berpengalaman dan fasilitas lengkap.
+                    {t("hero.slide2.description")}
                   </p>
                   
                 </div>
@@ -304,12 +302,10 @@ export default function Navbar() {
               >
                 <div className="container">
                   <h1 className="fw-bold text-light display-4 mb-3 text-uppercase">
-                    Layanan Inspeksi dan Pengujian Peralatan Kerja
+                    {t("hero.slide3.title")}
                   </h1>
                   <p className="lead mb-4">
-                    Tenaga ahli kami melakukan riksa uji peralatan dan lingkungan kerja 
-                    untuk memastikan keselamatan dan kepatuhan 
-                    terhadap standar nasional dan internasional.
+                    {t("hero.slide3.description")}
                   </p>
                   
                 </div>

@@ -1,21 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function Table({ data, className }) {
-  const [tableData, setTableData] = useState(data.map((item) => ({ ...item })));
+function Table({ data, className, onDelete, onEdit }) {
+  const [tableData, setTableData] = useState([]);
+
+  useEffect(() => {
+    if (data && data.length > 0) {
+      setTableData(data.map((item) => ({ ...item })));
+    }
+  }, [data]);
 
   const allMonths = [
-    "Januari",
-    "Februari",
-    "Maret",
-    "April",
-    "Mei",
-    "Juni",
-    "Juli",
-    "Agustus",
-    "September",
-    "Oktober",
-    "November",
-    "Desember",
+    "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+    "Juli", "Agustus", "September", "Oktober", "November", "Desember",
   ];
 
   const tanggalPerBulan = {
@@ -36,49 +32,52 @@ function Table({ data, className }) {
   const handleBulanChange = (index, bulan) => {
     const newData = [...tableData];
     newData[index].bulan = bulan;
-
-    // saat bulan dipilih, langsung assign tanggal otomatis
     newData[index].tanggal = tanggalPerBulan[bulan].join(", ");
-
     setTableData(newData);
   };
 
   return (
-    <table class="table table-striped">
-      <thead>
+    <table className="table table-bordered align-middle text-center">
+      <thead className="table-success">
         <tr>
-          <th scope="col">No</th>
-          <th scope="col">Nama Training</th>
-          <th scope="col">Biaya</th>
-          <th scope="col">Jumlah hari</th>
-          <th scope="col">Bulan</th>
-          <th scope="col">Tanggal</th>
+          <th>No</th>
+          <th>Nama Pelatihan</th>
+          <th>Harga</th>
+          <th>Jumlah Hari</th>
+          <th>Bidang</th>
+          <th>Aksi</th>
         </tr>
       </thead>
       <tbody>
-        {tableData.map((row, index) => (
-          <tr key={index}>
-            <td>{index + 1}</td>
-            <td>{row.nama}</td>
-            <td>{row.harga}</td>
-            <td>{row.jmlHari}</td>
-            <td>
-              <select
-                className="form-select form-select-sm"
-                value={row.bulan}
-                onChange={(e) => handleBulanChange(index, e.target.value)}
-              >
-                <option value="">--Pilih Bulan--</option>
-                {allMonths.map((bulan) => (
-                  <option key={bulan} value={bulan}>
-                    {bulan}
-                  </option>
-                ))}
-              </select>
-            </td>
-            <td>{row.tanggal}</td>
+        {data && data.length > 0 ? (
+          data.map((item, index) => (
+            <tr key={item.id}>
+              <td>{index + 1}</td>
+              <td>{item.nama}</td>
+              <td>Rp {Number(item.harga).toLocaleString()}</td>
+              <td>{item.jmlHari}</td>
+              <td>{item.bidang}</td>
+              <td>
+                <button
+                  className="btn btn-warning btn-sm me-2"
+                  onClick={() => onEdit(item)}
+                >
+                  Edit
+                </button>
+                <button
+                  className="btn btn-danger btn-sm"
+                  onClick={() => onDelete(item.id)}
+                >
+                  Hapus
+                </button>
+              </td>
+            </tr>
+          ))
+        ) : (
+          <tr>
+            <td colSpan="6">Belum ada data</td>
           </tr>
-        ))}
+        )}
       </tbody>
     </table>
   );

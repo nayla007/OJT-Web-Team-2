@@ -60,10 +60,13 @@ function Footer() {
               untuk memberikan pelayanan terbaik dengan profesionalisme tinggi.
             </p>
             <div className="d-flex gap-3 fs-5">
-              <a href="#" className="text-light">
+              <a href="#" className="text-light" >
                 <i className="bi bi-facebook"></i>
               </a>
-              <a href="#" className="text-light">
+              <a className="text-light" 
+                href="https://www.instagram.com/geomandirigroupcreative/" 
+                target="_blank"
+                rel="noopener noreferrer">
                 <i className="bi bi-instagram"></i>
               </a>
               <a href="#" className="text-light">

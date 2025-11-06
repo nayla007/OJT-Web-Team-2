@@ -1,0 +1,58 @@
+{
+  "navbar": {
+    "home": "Home",
+    "training_schedule": "Training Schedule",
+    "training_k3": "K3 Training",
+    "registration": "Registration",
+    "phone": "phone: +62 21-11-2123-900"
+  },
+  "dropdown": {
+    "id": "ID",
+    "eng": "ENG"
+  },
+  "hero": {
+    "slide1": {
+      "title": "Trusted Partner in Safety and Compliance",
+      "description": "PT Geo Mandiri Kreasi provides certified safety training and consulting services to ensure your workplace is safe and complies with Ministry of Manpower regulations."
+    },
+    "slide2": {
+      "title": "Officially Certified Safety Training by the Ministry of Manpower",
+      "description": "We offer various training programs such as General Safety Expert, Electrical Safety, Crane Operator, and more — led by experienced instructors with complete facilities."
+    },
+    "slide3": {
+      "title": "Inspection and Testing Services for Work Equipment",
+      "description": "Our experts conduct equipment and workplace inspections to ensure safety and compliance with national and international standards."
+    }
+  },
+  "features": {
+    "safety_training": "Safety Training",
+    "training_sdm": "HR Development Training",
+    "consultant": "Consulting Division",
+    "event": "Event Organizer",
+    "desc1": "Other K3 Training and Consultancy...",
+    "desc2": "Soft Skills, Leadership, Management, Team Building, ITC.",
+    "desc3": "Planning & Spatial Consulting, Survey & IT Technology.",
+    "desc4": "Corporate Events, Family Gatherings, Publications & Promotions."
+  },
+  "about": {
+    "title": "Welcome to Geo Mandiri Kreasi",
+    "desc": "PT Geo Mandiri Kreasi is a company engaged in consulting, training, and inspection services related to Occupational Safety and Health (K3) and construction. As a certified and official business entity, we are committed to supporting the creation of safe, efficient, and compliant work environments.",
+    "points": {
+      "1": "Registered as an <strong>official PJK3</strong> and member of INKINDO DKI Jakarta",
+      "2": "Provides <strong>certified K3 training by the Ministry of Manpower</strong>",
+      "3": "Trusted <strong>K3 consulting and inspection</strong> services",
+      "4": "Focused on <strong>safety, quality, and compliance</strong>"
+    }
+  },
+  "infoK3": {
+    "subtitle": "Training & Certification",
+    "title": "K3 TRAINING INFORMATION <br /> CERTIFIED BY KEMNAKER & BNSP",
+    "desc1": "Every company in Indonesia is required to implement occupational safety and health (K3) in the workplace. Now, K3 training and certification can also be conducted online, such as those organized by <span class='fw-semibold text-white'>PT GEO MANDIRI KREASI</span> in Jakarta.",
+    "desc2": "This training helps workers understand and apply safety and health principles in various industrial fields — from K3 experts and operators to technicians."
+  },
+  "button": {
+    "detail": "Details",
+    "register_now": "Register for Training Now",
+    "view_schedule": "View Full Schedule"
+  }
+}
