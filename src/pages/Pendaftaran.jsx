@@ -16,7 +16,7 @@ export default function Pendaftaran() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const API_URL = "http://localhost:5000/data-pendaftar"
+    const API_URL = "http://localhost:5000/api/pendaftar/data-pendaftar"
 
     axios
       .post(API_URL, {
@@ -40,7 +40,8 @@ export default function Pendaftaran() {
         setTelPeserta("");
         setEmailPeserta("");
         setPelatihan("");
-        console.log(response);
+        alert("✅ Pendaftaran berhasil dikirim!");
+  console.log("Berhasil:", response);
       })
       .catch((error) => {
         console.error("Gagal Menyimpan Data:", error);
@@ -256,7 +257,7 @@ export default function Pendaftaran() {
           href="/Formulir_Pendaftaran.doc"
           download
           target="_blank"
-          className="btn btn-success ms-2"
+          className="btn btn-success"
         >
           Download Formulir (.doc)
         </a>

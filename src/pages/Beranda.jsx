@@ -34,9 +34,6 @@ export default function Beranda() {
           <p className="text-muted small">
             {t("features.desc1")}
           </p>
-          <button className="btn btn-warning rounded-pill px-4 mt-2">
-            {t("button.detail")}
-          </button>
         </div>
       </div>
 
@@ -48,9 +45,6 @@ export default function Beranda() {
           <p className="text-muted small">
            {t("features.desc2")}
           </p>
-          <button className="btn btn-warning rounded-pill px-4 mt-2">
-            {t("button.detail")}
-          </button>
         </div>
       </div>
 
@@ -62,9 +56,6 @@ export default function Beranda() {
           <p className="text-muted small">
             {t("features.desc3")}
           </p>
-          <button className="btn btn-warning rounded-pill px-4 mt-2">
-            {t("button.detail")}
-          </button>
         </div>
       </div>
 
@@ -76,9 +67,6 @@ export default function Beranda() {
           <p className="text-muted small">
             {t("features.desc4")}
           </p>
-          <button className="btn btn-warning rounded-pill px-4 mt-2">
-            {t("button.detail")}
-          </button>
         </div>
       </div>
     </div>
@@ -216,7 +204,7 @@ export default function Beranda() {
 <div className="container my-5 py-5" data-aos="fade-up">
   <div className="text-center mb-5">
     <h2 className="fw-bold text-dark">TESTIMONIALS</h2>
-    <p className="text-muted">Pendapat Klien Kami</p>
+    <p className="text-muted">{t("testimoni.subtitle")}</p>
   </div>
 
   <div className="row g-4">
@@ -224,9 +212,7 @@ export default function Beranda() {
     <div className="col-md-6 col-lg-6">
       <div className="testimonial-box p-4 bg-white shadow-sm h-100">
         <p className="text-secondary mb-4">
-          “Gabungan teori dan praktek membuat pelatihan menjadi menarik
-          dan berkesan serta alat untuk prakteknya lengkap sehingga
-          ketika ujian saya bisa kerjakan dengan lancar.”
+          {t("testimoni.desc")}
         </p>
         <div className="d-flex align-items-center">
           <img
@@ -237,8 +223,8 @@ export default function Beranda() {
             height="60"
           />
           <div>
-            <h6 className="mb-0 fw-bold">Dita L. Fajarwati</h6>
-            <small className="text-muted">PT. Bintang Toedjoe</small>
+            <h6 className="mb-0 fw-bold">{t("testimoni.orang")}</h6>
+            <small className="text-muted">{t("testimoni.pt")}</small>
           </div>
         </div>
       </div>
@@ -248,9 +234,7 @@ export default function Beranda() {
     <div className="col-md-6 col-lg-6">
       <div className="testimonial-box p-4 bg-white shadow-sm h-100">
         <p className="text-secondary mb-4">
-          “Instruktur sangat berpengalaman di bidangnya, membuat pelatihan
-          P3K yang saya ikuti menjadi sangat menyenangkan dan mendapat ilmu
-          yang luar biasa”
+          {t("testimoni.desc2")}
         </p>
         <div className="d-flex align-items-center">
           <img
@@ -261,8 +245,8 @@ export default function Beranda() {
             height="60"
           />
           <div>
-            <h6 className="mb-0 fw-bold">Lutfi Ulpah</h6>
-            <small className="text-muted">PT. Happy indonesia</small>
+            <h6 className="mb-0 fw-bold">{t("testimoni.orang2")}</h6>
+            <small className="text-muted">{t("testimoni.pt2")}</small>
           </div>
         </div>
       </div>
@@ -272,8 +256,7 @@ export default function Beranda() {
     <div className="col-md-6 col-lg-6">
       <div className="testimonial-box p-4 bg-white shadow-sm h-100">
         <p className="text-secondary mb-4">
-          “Ruangan dan tempat pelatiihan strategis,
-          mudah dijangkau oleh transportasi.”
+          {t("testimoni.desc3")}
         </p>
         <div className="d-flex align-items-center">
           <img
@@ -284,8 +267,8 @@ export default function Beranda() {
             height="60"
           />
           <div>
-            <h6 className="mb-0 fw-bold">Sodikin</h6>
-            <small className="text-muted">PT. Tetsu Sarana Persada</small>
+            <h6 className="mb-0 fw-bold">{t("testimoni.orang3")}</h6>
+            <small className="text-muted">{t("testimoni.pt3")}</small>
           </div>
         </div>
       </div>
@@ -295,8 +278,7 @@ export default function Beranda() {
     <div className="col-md-6 col-lg-6">
       <div className="testimonial-box p-4 bg-white shadow-sm h-100">
         <p className="text-secondary mb-4">
-          “Training seperti ini mesti harus banyak di lakukan agar SDM
-          menjadi lebih berkualitas.”
+          {t("testimoni.desc4")}
         </p>
         <div className="d-flex align-items-center">
           <img
@@ -307,8 +289,8 @@ export default function Beranda() {
             height="60"
           />
           <div>
-            <h6 className="mb-0 fw-bold">Pujo Warsito</h6>
-            <small className="text-muted">PT. Triteguh Manunggal Sejati</small>
+            <h6 className="mb-0 fw-bold">{t("testimoni.orang4")}</h6>
+            <small className="text-muted">{t("testimoni.pt4")}</small>
           </div>
         </div>
       </div>
@@ -320,8 +302,8 @@ export default function Beranda() {
 {/* Bagian Jadwal Training */}
 <div className="container py-5" data-aos="fade-up">
   <div className="text-center mb-5">
-    <h2 className="fw-bold text-dark">Jadwal Training Kami</h2>
-    <p className="text-muted">Pilih bidang pelatihan sesuai kebutuhan Anda</p>
+    <h2 className="fw-bold text-dark">{t("training.title")}</h2>
+    <p className="text-muted">{t("training.subtitle")}</p>
   </div>
 
   <div className="row gy-4 justify-content-center">
@@ -329,24 +311,24 @@ export default function Beranda() {
     <div className="col-md-4">
       <div className="p-4 shadow-sm bg-white rounded-3 text-center h-100">
         <i className="bi bi-building-gear fs-1 text-primary mb-3"></i>
-        <h5 className="fw-bold">Bidang Elevator dan Eskalator</h5>
-        <p className="text-muted">Pelatihan teknis untuk instalasi, perawatan, dan inspeksi elevator serta eskalator.</p>
+        <h5 className="fw-bold">{t("training.elevator.title")}</h5>
+        <p className="text-muted">{t("training.elevator.desc")}.</p>
       </div>
     </div>
 
     <div className="col-md-4">
       <div className="p-4 shadow-sm bg-white rounded-3 text-center h-100">
         <i className="bi bi-fire fs-1 text-danger mb-3"></i>
-        <h5 className="fw-bold">Bidang Penanggulangan Kebakaran</h5>
-        <p className="text-muted">Pelatihan keselamatan kerja dan sistem proteksi kebakaran industri.</p>
+        <h5 className="fw-bold">{t("training.kebakaran.title")}</h5>
+        <p className="text-muted">{t("training.kebakaran.desc")}</p>
       </div>
     </div>
 
     <div className="col-md-4">
       <div className="p-4 shadow-sm bg-white rounded-3 text-center h-100">
         <i className="bi bi-hammer fs-1 text-warning mb-3"></i>
-        <h5 className="fw-bold">Bidang Konstruksi dan Bangunan</h5>
-        <p className="text-muted">Peningkatan kompetensi pekerja di bidang konstruksi dan pengawasan bangunan.</p>
+        <h5 className="fw-bold">{t("training.konstruksi.title")}</h5>
+        <p className="text-muted">{t("training.konstruksi.desc")}</p>
       </div>
     </div>
 
@@ -354,16 +336,16 @@ export default function Beranda() {
     <div className="col-md-4">
       <div className="p-4 shadow-sm bg-white rounded-3 text-center h-100">
         <i className="bi bi-gear-wide-connected fs-1 text-success mb-3"></i>
-        <h5 className="fw-bold">Bidang Pesawat Angkat dan Pesawat Angkut</h5>
-        <p className="text-muted">Pelatihan operator dan teknisi alat berat, crane, serta sistem angkut industri.</p>
+        <h5 className="fw-bold">{t("training.angkut.title")}</h5>
+        <p className="text-muted">{t("training.angkut.desc")}</p>
       </div>
     </div>
 
     <div className="col-md-4">
       <div className="p-4 shadow-sm bg-white rounded-3 text-center h-100">
         <i className="bi bi-lightning-charge fs-1 text-info mb-3"></i>
-        <h5 className="fw-bold">Bidang Pesawat Tenaga dan Produksi</h5>
-        <p className="text-muted">Pelatihan penggunaan dan perawatan mesin produksi serta sistem tenaga industri.</p>
+        <h5 className="fw-bold">{t("training.tenaga.title")}</h5>
+        <p className="text-muted">{t("training.tenaga.desc")}</p>
       </div>
     </div>
   </div>
@@ -382,7 +364,7 @@ export default function Beranda() {
       onMouseEnter={(e) => (e.target.style.backgroundColor = "#004d2c")}
       onMouseLeave={(e) => (e.target.style.backgroundColor = "#006d3b")}
     >
-      Lihat Jadwal Lengkap
+      {t("button.view_schedule")}
     </Link>
   </div>
 </div>

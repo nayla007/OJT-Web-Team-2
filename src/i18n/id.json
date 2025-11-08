@@ -50,6 +50,45 @@
     "desc1": "Setiap perusahaan di Indonesia wajib menerapkan K3 di lingkungan kerjanya. Kini, pelatihan dan sertifikasi K3 juga dapat dilakukan secara online, seperti yang diselenggarakan oleh <span class='fw-semibold text-white'>PT GEO MANDIRI KREASI</span> di Jakarta.",
     "desc2": "Pelatihan ini membantu tenaga kerja memahami dan menerapkan prinsip keselamatan serta kesehatan kerja di berbagai bidang industri — mulai dari ahli K3, operator, hingga teknisi."
   },
+  "testimoni":{
+    "subtitle": "Pendapat Klien Kami",
+    "desc": "Gabungan teori dan praktek membuat pelatihan menjadi menarik dan berkesan serta alat untuk prakteknya lengkap sehingga ketika ujian saya bisa kerjakan dengan lancar.",
+    "desc2": "Instruktur sangat berpengalaman di bidangnya, membuat pelatihan P3K yang saya ikuti menjadi sangat menyenangkan dan mendapat ilmu yang luar biasa",
+    "desc3" : "Ruangan dan tempat pelatiihan strategis, mudah dijangkau oleh transportasi.",
+    "desc4" : "Training seperti ini mesti harus banyak di lakukan agar SDM menjadi lebih berkualitas.",
+    "orang" : "Dita L. Fajarwati",
+    "orang2" : "Lutfi Ulpah",
+    "orang3" : "Sodikin",
+    "orang4" : "Pujo Warsito",
+    "pt" : "PT. Bintang Toedjoe",
+    "pt2" : "PT. Happy indonesia",
+    "pt3" : "PT. Tetsu Sarana Persada",
+    "pt4" : "PT. Triteguh Manunggal Sejati"
+  },
+  "training" : {
+    "title": "Jadwal Training Kami",
+    "subtitle": "Pilih bidang pelatihan sesuai kebutuhan Anda",
+    "elevator": {
+      "title": "Bidang Elevator dan Eskalator",
+      "desc": "Pelatihan teknis untuk instalasi, perawatan, dan inspeksi elevator serta eskalator."
+    },
+    "kebakaran": {
+      "title": "Bidang Penanggulangan Kebakaran",
+      "desc": "Pelatihan keselamatan kerja dan sistem proteksi kebakaran industri."
+    },
+    "konstruksi": {
+      "title": "Bidang Konstruksi dan Bangunan",
+      "desc": "Peningkatan kompetensi pekerja di bidang konstruksi dan pengawasan bangunan."
+    },
+    "tenaga": {
+      "title": "Bidang Pesawat Tenaga dan Produksi",
+      "desc": "Pelatihan penggunaan dan perawatan mesin produksi serta sistem tenaga industri."
+    },
+    "angkut": {
+      "title": "Bidang Pesawat Angkat dan Pesawat Angkut",
+      "desc": "Pelatihan operator dan teknisi alat berat, crane, serta sistem angkut industri."
+    }
+  },
   "button": {
     "detail": "Detail",
     "register_now": "Daftar Pelatihan Sekarang",

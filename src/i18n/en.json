@@ -50,6 +50,45 @@
     "desc1": "Every company in Indonesia is required to implement occupational safety and health (K3) in the workplace. Now, K3 training and certification can also be conducted online, such as those organized by <span class='fw-semibold text-white'>PT GEO MANDIRI KREASI</span> in Jakarta.",
     "desc2": "This training helps workers understand and apply safety and health principles in various industrial fields — from K3 experts and operators to technicians."
   },
+  "testimoni": {
+    "subtitle": "Our Clients' Opinions",
+    "desc": "The combination of theory and practice made the training engaging and memorable, and the practice equipment was complete, so I could perform well during the exam.",
+    "desc2": "The instructor is very experienced in their field, making the first aid training I attended very enjoyable and extremely informative.",
+    "desc3": "The training rooms and venue are strategic, easily accessible by transportation.",
+    "desc4": "Trainings like this should be conducted more often to improve human resources quality.",
+    "orang": "Dita L. Fajarwati",
+    "orang2": "Lutfi Ulpah",
+    "orang3": "Sodikin",
+    "orang4": "Pujo Warsito",
+    "pt": "PT. Bintang Toedjoe",
+    "pt2": "PT. Happy Indonesia",
+    "pt3": "PT. Tetsu Sarana Persada",
+    "pt4": "PT. Triteguh Manunggal Sejati"
+  },
+  "training": {
+    "title": "Our Training Schedule",
+    "subtitle": "Choose the training field according to your needs",
+    "elevator": {
+      "title": "Elevator and Escalator Field",
+      "desc": "Technical training for installation, maintenance, and inspection of elevators and escalators."
+    },
+    "kebakaran": {
+      "title": "Fire Safety Field",
+      "desc": "Work safety training and industrial fire protection systems."
+    },
+    "konstruksi": {
+      "title": "Construction and Building Field",
+      "desc": "Improving the competencies of workers in construction and building supervision."
+    },
+    "tenaga": {
+      "title": "Power and Production Machinery Field",
+      "desc": "Training in the use and maintenance of production machinery and industrial power systems."
+    },
+    "angkut": {
+      "title": "Lifting and Transport Machinery Field",
+      "desc": "Training for operators and technicians of heavy equipment, cranes, and industrial transport systems."
+    }
+  },
   "button": {
     "detail": "Details",
     "register_now": "Register for Training Now",

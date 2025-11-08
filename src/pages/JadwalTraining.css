@@ -17,10 +17,11 @@ a.download-jadwal {
   padding: 20px 20px;
 }
 
-.main-content {
-  
-   /* biar bisa discroll */
+h3 {
+  margin-top: 40px; /* jarak dari elemen atas */
+  margin-bottom: 20px; /* jarak ke tabel di bawah */
 }
+
 
 section {
   margin: 100px;

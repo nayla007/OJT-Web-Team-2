@@ -19,7 +19,7 @@ function JadwalTraining() {
   // 🔹 Ambil data dari backend
   const fetchData = () => {
     axios
-      .get("http://localhost:3000/jadwal")
+      .get("http://localhost:5000/api/jadwal")
       .then((res) => {
         console.log("Data dari backend:", res.data);
         setJadwalData(res.data);
@@ -43,7 +43,7 @@ function JadwalTraining() {
       jmlHari: Number(formData.jmlHari),
     };
 
-    await axios.post("http://localhost:3000/jadwal", payload);
+    await axios.post("http://localhost:5000/api/jadwal", payload);
     alert("Data berhasil ditambahkan!");
     setFormData({ nama: "", harga: "", jmlHari: "", bidang: "" });
     setShowModal(false);
@@ -65,7 +65,7 @@ function JadwalTraining() {
 const handleDelete = async (id) => {
   if (!window.confirm("Yakin ingin menghapus data ini?")) return;
   try {
-    await axios.delete(`http://localhost:3000/jadwal/${id}`);
+    await axios.delete(`http://localhost:5000/api/jadwal/${id}`);
     alert("Data berhasil dihapus!");
     fetchData(); // refresh data
   } catch (err) {
@@ -90,7 +90,7 @@ const handleDelete = async (id) => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:3000/jadwal/${selectedJadwal.id}`, formData);
+      await axios.put(`http://localhost:5000/api/jadwal/${selectedJadwal.id}`, formData);
       alert("Data berhasil diupdate!");
       setShowEditModal(false);
       setFormData({ nama: "", harga: "", jmlHari: "", bidang: "" });
@@ -117,7 +117,7 @@ const handleDelete = async (id) => {
       </div>
 
       {/* Semua tabel bidang */}
-      <div className="container">
+      <div className="container mb-3 mt-5">
         <h3>Bidang Elevator dan Eskalator</h3>
         <Table data={filterByBidang("Elevator")} onDelete={handleDelete} onEdit={handleEditClick}/>
       </div>

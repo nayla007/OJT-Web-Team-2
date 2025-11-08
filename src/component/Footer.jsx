@@ -60,7 +60,7 @@ function Footer() {
               untuk memberikan pelayanan terbaik dengan profesionalisme tinggi.
             </p>
             <div className="d-flex gap-3 fs-5">
-              <a href="#" className="text-light" >
+              <a href="https://www.facebook.com/geomandirigroup/" className="text-light" >
                 <i className="bi bi-facebook"></i>
               </a>
               <a className="text-light" 
@@ -69,7 +69,7 @@ function Footer() {
                 rel="noopener noreferrer">
                 <i className="bi bi-instagram"></i>
               </a>
-              <a href="#" className="text-light">
+              <a href="https://id.linkedin.com/company/pt-geo-mandiri-kreasi" className="text-light">
                 <i className="bi bi-linkedin"></i>
               </a>
               <a href="#" className="text-light">
@@ -113,23 +113,12 @@ function Footer() {
 </div>
 
 
-          {/* Kolom 3 - Stay Connected */}
+          {/* Kolom 3 - Informasi Singkat */}
           <div className="col-md-4">
-            <h6 className="fw-bold text-light mb-3">Stay Connected</h6>
+            <h6 className="fw-bold text-light mb-3">Info Pelatihan</h6>
             <p className="text-muted-light small">
-              Daftarkan email Anda untuk mendapatkan informasi dan tips terbaru
-              seputar layanan kami serta pelatihan K3.
+              Jangan lewatkan info pelatihan & event kami. Kunjungi website kami secara rutin untuk update terbaru.
             </p>
-            <button
-              className="btn btn-warning fw-semibold mt-2"
-              style={{
-                color: "#fff",
-                borderRadius: "30px",
-                padding: "8px 22px",
-              }}
-            >
-              Daftar Newsletter
-            </button>
           </div>
         </div>
 

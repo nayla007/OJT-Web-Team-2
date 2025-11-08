@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const API_URL = "http://localhost:5000/data-pendaftar"; 
+const API_URL = "http://localhost:5000/api/pendaftar/data-pendaftar"; 
 
 export default function DataPendaftar() {
     const [dataPendaftar, setDataPendaftar] = useState([]);
@@ -22,8 +22,10 @@ export default function DataPendaftar() {
     }, []); 
 
     const handleUpdate = (id) => {
-        navigate(`/admin/data-pendaftar-edit/${id}`)
-    }
+    navigate(`/admin/data-pendaftar/edit/${id}`)
+}
+
+
 
     const handleDelete = (id) => {
         const confirmDelete = window.confirm(
@@ -32,7 +34,7 @@ export default function DataPendaftar() {
         if (!confirmDelete) return;
 
         axios
-            .delete(`http://localhost:5000/data-pendaftar/${id}`)
+            .delete(`http://localhost:5000/api/pendaftar/data-pendaftar/${id}`)
             .then(response =>{
                 fetchDataPendaftar();
                 alert('Data Berhasil dihapus')

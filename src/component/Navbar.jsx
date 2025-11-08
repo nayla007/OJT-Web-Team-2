@@ -6,6 +6,8 @@ import "aos/dist/aos.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { useTranslation } from "react-i18next"; // 
+import './Navbar.css';
+
 
 export default function Navbar() {
   const location = useLocation();
@@ -63,10 +65,19 @@ export default function Navbar() {
   >
     <i className="bi bi-instagram"></i>
   </a>
-      <a href="#" className="text-dark me-3">
-        <i className="bi bi-twitter"></i>
+      <a 
+        href="https://id.linkedin.com/company/pt-geo-mandiri-kreasi" 
+        className="text-dark me-3"
+        target="_blank"
+        rel="noopener noreferrer">
+        <i className="bi bi-linkedin"></i>
       </a>
-      <a href="#" className="text-dark me-3">
+      <a 
+      href="https://www.facebook.com/geomandirigroup/" 
+      target="_blank"
+      rel="noopener noreferrer" 
+      className="text-dark me-3"
+      >
         <i className="bi bi-facebook"></i>
       </a>
       <a href="#" className="text-dark me-3">
@@ -100,9 +111,7 @@ export default function Navbar() {
       <li><button className="dropdown-item" onClick={() => changeLanguage("en")}>{t("dropdown.eng")}</button></li>
   </ul>
 </div>
-      <a href="#" className="btn btn-outline-success btn-sm" style={{ borderColor: "#006d3b", color: "#006d3b" }}>
-              {t("navbar.registration")}
-      </a>
+
     </div>
         </div>
       </div>
@@ -119,10 +128,11 @@ export default function Navbar() {
           transition: "top 0.3s ease",
           paddingTop: "0.4rem",
           paddingBottom: "0.4rem",
-          height: "70px",
+          height: "90px",
+          
         }}
       >
-        <div className="container container-scroll">
+        <div className="container-fluid container-scroll">
           {/* 🔸 Logo */}
           <NavLink className="navbar-brand fw-bold text-dark" to="/beranda">
             <img

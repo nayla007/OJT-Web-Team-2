@@ -37,6 +37,8 @@ function Table({ data, className, onDelete, onEdit }) {
   };
 
   return (
+    <div className="table-responsive mb-5">
+
     <table className="table table-bordered align-middle text-center">
       <thead className="table-success">
         <tr>
@@ -80,6 +82,8 @@ function Table({ data, className, onDelete, onEdit }) {
         )}
       </tbody>
     </table>
+    </div>
+    
   );
 }
 
