@@ -21,18 +21,32 @@ export default function DaftarPelatihan() {
   useEffect(() => {
     const loadKategori = async () => {
       try {
-        const res = await axios.get(API_KATEGORI);
-        console.log("API kategori:", res.data); // <-- debug penting
-        setKategori(res.data);
-        if (!selected && res.data.length > 0) {
-          setSelected(res.data[0].id_kategori);
-        }
-      } catch (err) {
-        console.error(err);
+        // ambil kategori
+        const kat = await axios.get("http://localhost:5000/kategori-pelatihan");
+
+        // ambil daftar pelatihan
+        const pel = await axios.get("http://localhost:5000/daftar-pelatihan");
+
+        // gabungkan manual berdasarkan id_kategori
+        const kategoriFinal = kat.data.map((k) => ({
+          ...k,
+          daftar_pelatihan: pel.data.filter(
+            (p) => p.id_kategori === k.id_kategori
+          ),
+        }));
+
+        setKategori(kategoriFinal);
+      } catch (error) {
+        console.log(error);
       }
     };
+
     loadKategori();
   }, []);
+
+  useEffect(() => {
+    console.log("Kategori lengkap:", kategori);
+  }, [kategori]);
 
   // render sidebar (sama seperti sebelumnya)
   {
@@ -154,8 +168,26 @@ export default function DaftarPelatihan() {
                                 <h6>Persyaratan</h6>
                                 <p>{pel.persyaratan}</p>
 
-                                <h6>Materi</h6>
+                                <h6>Materi Pembelajaran</h6>
                                 <p>{pel.materi_pembelajaran}</p>
+
+                                <h6>Instruktur</h6>
+                                <p>{pel.instruktur}</p>
+
+                                <h6>Sertifikasi</h6>
+                                <p>{pel.sertifikasi}</p>
+
+                                <h6>Metode Pembelajaran</h6>
+                                <p>{pel.metode_pembelajaran}</p>
+
+                                <h6>Biaya</h6>
+                                <p>{pel.biaya}</p>
+
+                                <h6>Fasilitas</h6>
+                                <p>{pel.fasilitas}</p>
+
+                                <h6>Contact</h6>
+                                <p>{pel.contact}</p>
 
                                 <div className="d-flex justify-content-end gap-2">
                                   <button
