@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { login, register } from "../../services/authService";
+import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 export default function AuthPage() {
@@ -8,6 +9,8 @@ export default function AuthPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+
+  const { login, register } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,9 +36,14 @@ export default function AuthPage() {
 
   return (
     <div className="container mt-5">
-      <h2 className="text-center">{isLogin? 'Login Admin' : 'Daftar Admin Baru'}</h2>
       <div className="row justify-content-center">
-        <div className="col-md-4">
+        <div className="col-md-6 col-lg-5">
+
+          <div className="card shadow-lg p-4"> 
+        <div className="card-body">
+
+      <h2 className="text-center">{isLogin? 'Login Admin' : 'Daftar Admin Baru'}</h2>
+      
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label className="form-label">Username</label>
@@ -45,6 +53,7 @@ export default function AuthPage() {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
+                autoComplete="off"
               />
             </div>
 
@@ -56,6 +65,7 @@ export default function AuthPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
+                autoComplete="new-password"
               />
             </div>
 
@@ -67,19 +77,23 @@ export default function AuthPage() {
 
             <p className="text-center mt-2">
               {isLogin ?
-              (<>Belum punya akun? <span 
+              (<>Belum punya akun? <button 
                 onClick={() => setIsLogin(false)}
-                className="text-primary fw-semibold"
-                >Daftar Disini</span></>) :
-              (<>Sudah punya akun? <span 
+                className="btn text-primary border-0 fw-semibold"
+                >Daftar Disini</button></>) :
+              (<>Sudah punya akun? <button 
                 onClick={() => setIsLogin(true)}
-                className="text-primary fw-semibold"
-                >Login Disini</span></>)
+                className="btn text-primary fw-semibold"
+                >Login Disini</button></>)
               }
             </p>
 
           </form>
-        </div>
+        
+
+      </div>
+      </div>
+      </div>
       </div>
     </div>
   );
