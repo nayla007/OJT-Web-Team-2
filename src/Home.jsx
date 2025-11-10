@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import Beranda from "./pages/Beranda";
 import PelatihanK3 from "./pages/PelatihanK3";
 import JadwalTraining from "./pages/JadwalTraining";
-import Pendaftaran from "./pages/pendaftaran";
+import Pendaftaran from "./pages/Pendaftaran";
 import Footer from "./components/Footer";
 import "./Home.css";
 import "./components/Navbar.css";

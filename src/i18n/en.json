@@ -89,6 +89,46 @@
       "desc": "Training for operators and technicians of heavy equipment, cranes, and industrial transport systems."
     }
   },
+  "jadwal": {
+    "title": "PT. Geo Mandiri Kreasi Training Schedule",
+    "download": "Download Training Schedule 2025",
+    "add": "Add Training Schedule",
+    "fields": {
+      "elevator": "Elevator and Escalator Field",
+      "fire": "Firefighting Field",
+      "construction": "Construction and Building Field",
+      "angkat": "Lifting and Transport Equipment Field",
+      "tenaga": "Power and Production Equipment Field",
+      "uap": "Steam Boiler, Pressure Vessel & Storage Tank Field",
+      "welding": "Welding Field"
+    },
+    "modal": {
+      "addTitle": "Add Training Schedule",
+      "editTitle": "Edit Training Schedule",
+      "name": "Training Name",
+      "price": "Price",
+      "days": "Number of Days",
+      "field": "Field",
+      "month": "Month",
+      "date": "Date",
+      "cancel": "Cancel",
+      "save": "Save",
+      "saveChanges": "Save Changes"
+    },
+     "table": {
+    "no": "No",
+    "name": "Training Name",
+    "price": "Price",
+    "days": "Days",
+    "field": "Field",
+    "month": "Month",
+    "date": "Date",
+    "actions": "Actions",
+    "edit": "Edit",
+    "delete": "Delete",
+    "noData": "No data available"
+  }
+  },
   "button": {
     "detail": "Details",
     "register_now": "Register for Training Now",

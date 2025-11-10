@@ -44,9 +44,22 @@ export default function DaftarPelatihan() {
     loadKategori();
   }, []);
 
-  useEffect(() => {
-    console.log("Kategori lengkap:", kategori);
-  }, [kategori]);
+  // useEffect(() => {
+  //   console.log("Kategori lengkap:", kategori);
+  // }, [kategori]);
+
+  //       const res = await axios.get(API_KATEGORI);
+  //       console.log("API kategori:", res.data); // <-- debug penting
+  //       setKategori(res.data);
+  //       if (!selected && res.data.length > 0) {
+  //         setSelected(res.data[0].id_kategori);
+  //       }
+  //     } catch (err) {
+  //       console.error(err);
+  //     }
+  //   };
+  //   loadKategori();
+  // }, []);
 
   // render sidebar (sama seperti sebelumnya)
   {
@@ -188,6 +201,10 @@ export default function DaftarPelatihan() {
 
                                 <h6>Contact</h6>
                                 <p>{pel.contact}</p>
+
+
+                                <h6>Materi</h6>
+                                <p>{pel.materi_pembelajaran}</p>
 
                                 <div className="d-flex justify-content-end gap-2">
                                   <button

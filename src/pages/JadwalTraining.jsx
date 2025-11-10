@@ -3,8 +3,10 @@ import Table from "../component/Table";
 import "./JadwalTraining.css";
 import axios from "axios";
 import JadwalPDF from "../document/jadwal_training.pdf";
+import { useTranslation } from "react-i18next";
 
 function JadwalTraining() {
+  const { t, i18n } = useTranslation();
   const [jadwalData, setJadwalData] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
@@ -103,52 +105,52 @@ const handleDelete = async (id) => {
 
   return (
     <div className="data-training">
-      <h1>Jadwal Training PT. Geo Mandiri Kreasi</h1>
+      <h1>{t("jadwal.title")}</h1>
 
       <a className="download-jadwal" href={JadwalPDF} download>
-        Download Jadwal Training 2025
+        {t("jadwal.download")}
       </a>
 
       {/* Tombol Tambah Data */}
       <div className="text-end mb-3 container">
         <button className="btn btn-success" onClick={() => setShowModal(true)}>
-          + Tambah Jadwal
+          {t("jadwal.add")}
         </button>
       </div>
 
       {/* Semua tabel bidang */}
       <div className="container mb-3 mt-5">
-        <h3>Bidang Elevator dan Eskalator</h3>
+        <h3>{t("jadwal.fields.elevator")}</h3>
         <Table data={filterByBidang("Elevator")} onDelete={handleDelete} onEdit={handleEditClick}/>
       </div>
 
       <div className="container">
-        <h3>Bidang Penanggulangan Kebakaran</h3>
+        <h3>{t("jadwal.fields.fire")}</h3>
         <Table data={filterByBidang("Kebakaran")} onDelete={handleDelete} onEdit={handleEditClick}/>
       </div>
 
       <div className="container">
-        <h3>Bidang Konstruksi dan Bangunan</h3>
+        <h3>{t("jadwal.fields.construction")}</h3>
         <Table data={filterByBidang("Konstruksi")} onDelete={handleDelete} onEdit={handleEditClick}/>
       </div>
 
       <div className="container">
-        <h3>Bidang Pesawat Angkat dan Pesawat Angkut</h3>
+        <h3>{t("jadwal.fields.angkat")}</h3>
         <Table data={filterByBidang("Pesawat Angkat")} onDelete={handleDelete} onEdit={handleEditClick}/>
       </div>
 
       <div className="container">
-        <h3>Bidang Pesawat Tenaga dan Produksi</h3>
+        <h3>{t("jadwal.fields.tenaga")}</h3>
         <Table data={filterByBidang("Pesawat Tenaga")} onDelete={handleDelete} onEdit={handleEditClick}/>
       </div>
 
       <div className="container">
-        <h3>Bidang Pesawat Uap, Bejana Tekanan & Tangki Timbun</h3>
+        <h3>{t("jadwal.fields.uap")}</h3>
         <Table data={filterByBidang("Pesawat Uap")} onDelete={handleDelete} onEdit={handleEditClick}/>
       </div>
 
       <div className="container">
-        <h3>Bidang Pengelasan</h3>
+        <h3>{t("jadwal.fields.welding")}</h3>
         <Table data={filterByBidang("Pengelasan")} onDelete={handleDelete} onEdit={handleEditClick}/>
       </div>
 
@@ -162,7 +164,7 @@ const handleDelete = async (id) => {
           <div className="modal-content">
             <form onSubmit={handleSubmit}>
               <div className="modal-header">
-                <h5 className="modal-title">Tambah Jadwal Training</h5>
+                <h5 className="modal-title">{t("jadwal.modal.addTitle")}</h5>
                 <button
                   type="button"
                   className="btn-close"
@@ -171,7 +173,7 @@ const handleDelete = async (id) => {
               </div>
               <div className="modal-body">
                 <div className="mb-3">
-                  <label className="form-label">Nama Training</label>
+                  <label className="form-label">{t("jadwal.modal.name")}</label>
                   <input
                     type="text"
                     className="form-control"
@@ -183,7 +185,7 @@ const handleDelete = async (id) => {
                   />
                 </div>
                 <div className="mb-3">
-                  <label className="form-label">Harga</label>
+                  <label className="form-label">{t("jadwal.modal.price")}</label>
                   <input
                     type="number"
                     className="form-control"
@@ -195,7 +197,7 @@ const handleDelete = async (id) => {
                   />
                 </div>
                 <div className="mb-3">
-                  <label className="form-label">Jumlah Hari</label>
+                  <label className="form-label">{t("jadwal.modal.days")}</label>
                   <input
                     type="number"
                     className="form-control"
@@ -207,7 +209,7 @@ const handleDelete = async (id) => {
                   />
                 </div>
                 <div className="mb-3">
-                  <label className="form-label">Bidang</label>
+                  <label className="form-label">{t("jadwal.modal.field")}</label>
                   <input
                     type="text"
                     className="form-control"
@@ -225,10 +227,10 @@ const handleDelete = async (id) => {
                   className="btn btn-secondary"
                   onClick={() => setShowModal(false)}
                 >
-                  Batal
+                  {t("jadwal.modal.cancel")}
                 </button>
                 <button type="submit" className="btn btn-primary">
-                  Simpan
+                  {t("jadwal.modal.save")}
                 </button>
               </div>
             </form>
@@ -242,18 +244,23 @@ const handleDelete = async (id) => {
           <div className="modal-content">
             <form onSubmit={handleUpdate}>
               <div className="modal-header">
-                <h5 className="modal-title">Edit Jadwal Training</h5>
+                <h5 className="modal-title">{t("jadwal.modal.editTitle")}</h5>
                 <button type="button" className="btn-close" onClick={() => setShowEditModal(false)}></button>
               </div>
               <div className="modal-body">
-                {["nama", "harga", "jmlHari", "bidang"].map((field) => (
-                  <div className="mb-3" key={field}>
-                    <label className="form-label text-capitalize">{field}</label>
+                {[
+                  { key: "nama", label: t("jadwal.modal.name") },
+                  { key: "harga", label: t("jadwal.modal.price") },
+                  { key: "jmlHari", label: t("jadwal.modal.days") },
+                  { key: "bidang", label: t("jadwal.modal.field") },
+                ].map((field) => (
+                  <div className="mb-3" key={field.key}>
+                    <label className="form-label text-capitalize">{field.label}</label>
                     <input
-                      type={field === "harga" || field === "jmlHari" ? "number" : "text"}
+                      type={field.key === "harga" || field.key === "jmlHari" ? "number" : "text"}
                       className="form-control"
-                      value={formData[field]}
-                      onChange={(e) => setFormData({ ...formData, [field]: e.target.value })}
+                      value={formData[field.key]}
+                      onChange={(e) => setFormData({ ...formData, [field.key]: e.target.value })}
                       required
                     />
                   </div>
@@ -261,10 +268,10 @@ const handleDelete = async (id) => {
               </div>
               <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" onClick={() => setShowEditModal(false)}>
-                  Batal
+                  {t("jadwal.modal.cancel")}
                 </button>
                 <button type="submit" className="btn btn-primary">
-                  Simpan Perubahan
+                  {t("jadwal.modal.saveChanges")}
                 </button>
               </div>
             </form>

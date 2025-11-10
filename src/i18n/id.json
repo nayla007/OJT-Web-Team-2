@@ -89,6 +89,47 @@
       "desc": "Pelatihan operator dan teknisi alat berat, crane, serta sistem angkut industri."
     }
   },
+  "jadwal": {
+    "title": "Jadwal Training PT. Geo Mandiri Kreasi",
+    "download": "Download Jadwal Training 2025",
+    "add": "+ Tambah Jadwal",
+    "fields": {
+      "elevator": "Bidang Elevator dan Eskalator",
+      "fire": "Bidang Penanggulangan Kebakaran",
+      "construction": "Bidang Konstruksi dan Bangunan",
+      "angkat": "Bidang Pesawat Angkat dan Pesawat Angkut",
+      "tenaga": "Bidang Pesawat Tenaga dan Produksi",
+      "uap": "Bidang Pesawat Uap, Bejana Tekanan & Tangki Timbun",
+      "welding": "Bidang Pengelasan"
+    },
+    "modal": {
+      "addTitle": "Tambah Jadwal Training",
+      "editTitle": "Edit Jadwal Training",
+      "name": "Nama Pelatihan",
+      "price": "Harga",
+      "days": "Jumlah Hari",
+      "field": "Bidang",
+      "month": "Bulan",
+      "date": "Tanggal",
+      "cancel": "Batal",
+      "save": "Simpan",
+      "saveChanges": "Simpan Perubahan"
+    },
+    "table": {
+    "no": "No",
+    "name": "Nama Pelatihan",
+    "price": "Harga",
+    "days": "Jumlah Hari",
+    "field": "Bidang",
+    "month": "Bulan",
+    "date": "Tanggal",
+    "actions": "Aksi",
+    "edit": "Edit",
+    "delete": "Hapus",
+    "noData": "Belum ada data"
+  }
+  },
+  
   "button": {
     "detail": "Detail",
     "register_now": "Daftar Pelatihan Sekarang",

@@ -128,7 +128,7 @@ export default function Navbar() {
           transition: "top 0.3s ease",
           paddingTop: "0.4rem",
           paddingBottom: "0.4rem",
-          height: "90px",
+          height: "85px",
           
         }}
       >

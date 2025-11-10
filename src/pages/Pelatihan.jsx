@@ -9,31 +9,43 @@ export default function PelatihanK3() {
     "Ahli K3": [
       {
         title: "Ahli K3 Kimia",
-        desc: "Pelatihan untuk menjadi Ahli K3 di bidang industri kimia, memahami bahaya bahan kimia dan prosedur keselamatan kerja."
+        desc: "Pelatihan untuk menjadi Ahli K3 di bidang industri kimia, memahami bahaya bahan kimia dan prosedur keselamatan kerja.",
+        file: "silabus/Ahli K3 Kimia.pdf"
       },
       {
         title: "Ahli K3 Listrik",
-        desc: "Pelatihan untuk mempersiapkan tenaga ahli dalam sistem keselamatan kerja kelistrikan industri."
+        desc: "Pelatihan untuk mempersiapkan tenaga ahli dalam sistem keselamatan kerja kelistrikan industri.",
+        file: "silabus/Ahli K3 Listrik Juni.pdf"
       },
       {
         title: "Ahli K3 Muda Lingkungan Kerja",
-        desc: "Pelatihan ini menyiapkan personil K3 yang kompeten untuk mengendalikan faktor fisika, kimia, biologi, ergonomi, dan psikologi kerja, serta memastikan fasilitas kebersihan dan higiene di tempat kerja. Tersedia tiga level kompetensi: Ahli Muda, Madya, dan Utama."
+        desc: "Pelatihan ini menyiapkan personil K3 yang kompeten untuk mengendalikan faktor fisika, kimia, biologi, ergonomi, dan psikologi kerja, serta memastikan fasilitas kebersihan dan higiene di tempat kerja. Tersedia tiga level kompetensi: Ahli Muda, Madya, dan Utama.",
+        file: "silabus/Ahli K3 Muda Lingkungan Kerja.pdf"
       },
       {
         title: "Ahli K3 Pesawat Angkat Dan Pesawat Angkut",
-        desc: "Pelatihan untuk memahami penilaian kelayakan dan keselamatan Pesawat Angkat & Pesawat Angkut sesuai standar K3, bagi tenaga operator dan maintenance bersertifikasi."
+        desc: "Pelatihan untuk memahami penilaian kelayakan dan keselamatan Pesawat Angkat & Pesawat Angkut sesuai standar K3, bagi tenaga operator dan maintenance bersertifikasi.",
+        file: "silabus/Ahli K3 PAA.pdf"
       },
       {
         title: "Ahli K3 Spesialis Kebakaran",
-        desc: "Pelatihan ini mempersiapkan tenaga ahli untuk mencegah, mengurangi, dan memadamkan kebakaran di tempat kerja sesuai standar Menaker No. KEP.186/1999. Peserta wajib mengikuti Kelas D, C, dan B terlebih dahulu, dan setiap 1 ahli bertanggung jawab untuk 300 pekerja di lokasi dengan risiko kebakaran ringan hingga berat."
+        desc: "Pelatihan ini mempersiapkan tenaga ahli untuk mencegah, mengurangi, dan memadamkan kebakaran di tempat kerja sesuai standar Menaker No. KEP.186/1999. Peserta wajib mengikuti Kelas D, C, dan B terlebih dahulu, dan setiap 1 ahli bertanggung jawab untuk 300 pekerja di lokasi dengan risiko kebakaran ringan hingga berat.",
+        file: "silabus/Ahli K3 Pesawat Angkat dan Pesawat Angkut.pdf"
       },
       {
         title: "Ahli K3 Umum",
-        desc: "Pelatihan ini menyiapkan Ahli K3 bersertifikasi sesuai UU No.1/1970 dan peraturan Menaker, untuk memastikan pelaksanaan K3 di perusahaan berjalan optimal serta mendukung produktivitas dan efisiensi kerja."
+        desc: "Pelatihan ini menyiapkan Ahli K3 bersertifikasi sesuai UU No.1/1970 dan peraturan Menaker, untuk memastikan pelaksanaan K3 di perusahaan berjalan optimal serta mendukung produktivitas dan efisiensi kerja.",
+        files: [
+    { name: "Pelatihan Ahli K3 Umum", path: "silabus/Ahli K3 Umum.pdf" },
+    { name: "Pelatihan Ahli K3 Umum(Agustus)", path: "silabus/Ahli K3 Umum Agustus 2022.pdf" },
+    { name: "Pelatihan Ahli K3 Umum(Oktober)", path: "silabus/Ahli K3 Umum Oktober 2022.pdf" },
+    { name: "Pelatihan Ahli K3 Umum(September)", path: "silabus/Ahli K3 Umum September 2022.pdf" }
+  ]
       },
       {
         title: "Ahli Muda K3 Konstruksi",
-        desc: "Industri konstruksi memiliki risiko kecelakaan kerja tertinggi dibanding industri lain, sehingga pelatihan ini menyiapkan calon Ahli Muda K3 untuk menanggulangi kecelakaan dan memastikan keselamatan di proyek konstruksi."
+        desc: "Industri konstruksi memiliki risiko kecelakaan kerja tertinggi dibanding industri lain, sehingga pelatihan ini menyiapkan calon Ahli Muda K3 untuk menanggulangi kecelakaan dan memastikan keselamatan di proyek konstruksi.",
+        file: "silabus/Ahli Muda K3 Konstruksi.pdf"
       }
     ],
     "Teknisi K3": [
@@ -97,6 +109,7 @@ export default function PelatihanK3() {
         <p className="text-muted">
           Pilih kategori pelatihan di bawah untuk melihat daftar program dan penjelasannya
         </p>
+        
       </div>
 
       <div className="row justify-content-center">
@@ -151,10 +164,25 @@ export default function PelatihanK3() {
                           data-bs-parent="#accordionPelatihan"
                         >
                           <div className="accordion-body">
-                            <p className="mb-0">{item.desc}</p>
-                            <div className="text-end mt-3">
-                              
-                            </div>
+                              <p className="mb-0">{item.desc}</p>
+                              {item.files ? (
+                                <div className="text-start mt-3">
+                                  <p className="fw-bold mb-2">Download File:</p>
+                                    {item.files.map((file, idx) => (
+                                      <div key={idx}>
+                                        <a className="download-jadwal mb-1" href={file.path} download>
+                                          📄 {file.name}
+                                        </a>
+                                      </div>
+                                    ))}
+                                </div>
+                              ) : item.file ? (
+                                  <div className="text-start mt-3">
+                                    <a className="download-jadwal" href={item.file} download>
+                                      📄 Download File Pelatihan
+                                    </a>
+                                  </div>
+                              ) : null}
                           </div>
                         </div>
                       </div>

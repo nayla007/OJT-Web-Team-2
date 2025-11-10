@@ -14,6 +14,9 @@ import Pendaftaran from "./pages/Pendaftaran";
 import DataPendaftar from "./pages/admin/DataPendaftar";
 import DataPendaftarEdit from "./pages/admin/DataPendaftarEdit";
 import LoginAdmin from "./pages/admin/LoginAdmin";
+import DashboardAdmin from "./pages/admin/DashboardAdmin";
+import AdminApproval from "./pages/admin/AdminApproval";
+import KategoriPelatihan from "./pages/admin/KategoriPelatihan";
 
 import "./component/Navbar.css";
 import "./component/Table.css";
@@ -51,6 +54,15 @@ function App() {
             </AuthLayout>
           }
         />
+
+        <Route
+  path="/admin/dashboard"
+  element={
+    <MainLayout>
+      <DashboardAdmin />
+    </MainLayout>
+  }
+/>
 
         {/* Halaman utama dengan Navbar/Footer */}
         <Route
@@ -98,6 +110,32 @@ function App() {
           element={
             <MainLayout>
               <DataPendaftarEdit />
+            </MainLayout>
+          }
+        />
+
+        <Route
+          path="/admin/kategori-pelatihan"
+          element={
+            <MainLayout>
+              <KategoriPelatihan />
+            </MainLayout>
+          }
+        />
+
+        <Route
+          path="/admin/approval"
+          element={
+            <MainLayout>
+              <DataPendaftar />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/admin/navbar"
+          element={
+            <MainLayout>
+              <DataPendaftar />
             </MainLayout>
           }
         />

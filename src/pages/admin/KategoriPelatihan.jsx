@@ -98,4 +98,6 @@ export default function KategoriPelatihan() {
       </div>
     </div>
   );
+
 }
+

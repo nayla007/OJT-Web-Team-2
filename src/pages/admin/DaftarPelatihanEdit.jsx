@@ -262,4 +262,5 @@ export default function DaftarPelatihanEdit() {
       </form>
     </section>
   );
+
 }
